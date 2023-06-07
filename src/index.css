@@ -17,3 +17,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.bg-dark-banner{
+  background-color: rgba(0, 0, 0, 0.768);
+}
