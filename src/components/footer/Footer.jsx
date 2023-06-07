@@ -152,6 +152,9 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
+            <div className='bg-dark py-2'>
+                <div className='text-center text-white'> Copyright &copy; Euphoria | All rights reserved</div>
+            </div>
 		</div>
 	);
 };
