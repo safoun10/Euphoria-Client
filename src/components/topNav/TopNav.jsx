@@ -19,12 +19,12 @@ const TopNav = () => {
 						</Link>
 					</div>
 					<div>
-						<Link className="text-decoration-none text-white fs-5 hover-link">
+						<Link to="/classes" className="text-decoration-none text-white fs-5 hover-link">
 							Classes
 						</Link>
 					</div>
 					<div>
-						<Link className="text-decoration-none text-white fs-5 hover-link">
+						<Link to="/dashboard" className="text-decoration-none text-white fs-5 hover-link">
 							Dashboard
 						</Link>
 					</div>

@@ -4,6 +4,8 @@ import Auth from "../src/pages/auth/Auth";
 import Login from "../src/components/login/Login";
 import Register from "../src/components/register/Register";
 import Instructors from "../src/pages/instructors/Instructors";
+import Classes from "../src/pages/classes/Classes";
+import Dashboard from "../src/pages/dashboard/Dashboard";
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
 	{
 		path: "/instructors",
 		element: <Instructors></Instructors>
+	},
+	{
+		path: "/classes",
+		element: <Classes></Classes>
+	},
+	{
+		path: "/dashboard",
+		element: <Dashboard></Dashboard>
 	}
 ]);
 
