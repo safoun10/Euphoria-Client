@@ -1,7 +1,11 @@
 .hover-link {
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid white ;
 }
 
-.hover-link:hover {
-    border-bottom: 2px solid white;
+.Links:hover{
+    color: rgba(255, 255, 255, 0.74) !important;
+}
+
+.unselective{
+    user-select: none;
 }

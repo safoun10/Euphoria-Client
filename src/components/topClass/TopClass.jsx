@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import "./TopClass.css"
+import React, { useEffect, useState } from "react";
+import "./TopClass.css";
+import axios from "axios";
 
 const TopClass = () => {
 	const [top, setTop] = useState([]);
 
+	const baseURL = "popular.json";
+	
 	useEffect(() => {
-		fetch("popular.json")
-		.then(res => res.json())
-		.then(data => setTop(data))
-	} ,[]);
+		axios.get(baseURL).then((response) => {
+			setTop(response.data);
+		});
+	}, []);
 
-	const first = top.slice(0 , 3);
-	const last = top.slice(3 , 6);
+	const first = top.slice(0, 3);
+	const last = top.slice(3, 6);
 
-    return (
+	return (
 		<div className="mx-auto mb-5" style={{ maxWidth: "1200px" }}>
 			<div className="text-center display-1 mt-5 pb-1 text-cursive">
 				Visit our top <span className="text-brown">Photography</span>{" "}
@@ -29,13 +32,13 @@ const TopClass = () => {
 			<div className="row">
 				<div className="col-sm-6 col-11 mx-auto">
 					{first.map((single) => (
-						<div key={single.id} className='top-card'>
+						<div key={single.id} className="top-card">
 							<img
 								src={single.photo}
 								alt="photo"
 								className="img-fluid rounded-2"
 							/>
-							<div className='d-flex align-items-center justify-content-between px-2'>
+							<div className="d-flex align-items-center justify-content-between px-2">
 								<div className="text-cursive display-5 pt-2">
 									{single.name}
 								</div>
@@ -48,13 +51,13 @@ const TopClass = () => {
 				</div>
 				<div className="col-sm-6 col-11 mx-auto">
 					{last.map((single) => (
-						<div key={single.id} className='top-card'>
+						<div key={single.id} className="top-card">
 							<img
 								src={single.photo}
 								alt="photo"
 								className="img-fluid rounded-2"
 							/>
-							<div className='d-flex align-items-center justify-content-between px-2'>
+							<div className="d-flex align-items-center justify-content-between px-2">
 								<div className="text-cursive display-5 pt-2">
 									{single.name}
 								</div>

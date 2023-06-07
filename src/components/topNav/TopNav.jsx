@@ -1,32 +1,62 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "./TopNav.css";
 
 const TopNav = () => {
+	const location = useLocation();
+	console.log(location.pathname);
 	return (
 		<div className="mx-auto py-2 text-white" style={{ maxWidth: "1400px" }}>
 			<div className="d-flex justify-content-between align-items-center">
-				<div className="display-6">EUPHORIA</div>
+				<div className="display-6 unselective">EUPHORIA</div>
 				<div className="d-flex gap-4">
 					<div>
-						<Link to="/home" className="text-decoration-none text-white fs-5 hover-link">
+						<NavLink
+							to="/home"
+							className={
+								location.pathname == "/home"
+									? "text-decoration-none text-white fs-5 Links hover-link"
+									: "text-decoration-none text-white fs-5 Links"
+							}
+						>
 							Home
-						</Link>
+						</NavLink>
 					</div>
 					<div>
-						<Link to="/instructors" className="text-decoration-none text-white fs-5 hover-link">
+						<NavLink
+							to="/instructors"
+							className={
+								location.pathname == "/instructors"
+									? "text-decoration-none text-white fs-5 Links hover-link"
+									: "text-decoration-none text-white fs-5 Links"
+							}
+						>
 							Instructors
-						</Link>
+						</NavLink>
 					</div>
 					<div>
-						<Link to="/classes" className="text-decoration-none text-white fs-5 hover-link">
+						<NavLink
+							to="/classes"
+							className={
+								location.pathname == "/classes"
+									? "text-decoration-none text-white fs-5 Links hover-link"
+									: "text-decoration-none text-white fs-5 Links"
+							}
+						>
 							Classes
-						</Link>
+						</NavLink>
 					</div>
 					<div>
-						<Link to="/dashboard" className="text-decoration-none text-white fs-5 hover-link">
+						<NavLink
+							to="/dashboard"
+							className={
+								location.pathname == "/dashboard"
+									? "text-decoration-none text-white fs-5 Links hover-link"
+									: "text-decoration-none text-white fs-5 Links"
+							}
+						>
 							Dashboard
-						</Link>
+						</NavLink>
 					</div>
 				</div>
 				<div>
