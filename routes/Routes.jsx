@@ -6,6 +6,7 @@ import Register from "../src/components/register/Register";
 import Instructors from "../src/pages/instructors/Instructors";
 import Classes from "../src/pages/classes/Classes";
 import Dashboard from "../src/pages/dashboard/Dashboard";
+import ErrPage from "../src/pages/errPage/ErrPage";
 
 const router = createBrowserRouter([
 	{
@@ -41,7 +42,12 @@ const router = createBrowserRouter([
 	{
 		path: "/dashboard",
 		element: <Dashboard></Dashboard>
+	},
+	{
+		path: "*",
+		element: <ErrPage></ErrPage>
 	}
+
 ]);
 
 export default router;
