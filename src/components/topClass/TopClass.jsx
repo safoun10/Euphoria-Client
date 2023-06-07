@@ -17,7 +17,7 @@ const TopClass = () => {
 	const last = top.slice(3, 6);
 
 	return (
-		<div className="mx-auto mb-5" style={{ maxWidth: "1200px" }}>
+		<div className="mx-auto mb-5 w-100" style={{ maxWidth: "1200px" }}>
 			<div className="text-center display-1 mt-5 pb-1 text-cursive">
 				Visit our top <span className="text-brown">Photography</span>{" "}
 				classes
@@ -29,7 +29,7 @@ const TopClass = () => {
 				expert instructors. Enroll now and embark on a transformative
 				photographic journey.
 			</div>
-			<div className="row">
+			<div className="row w-100">
 				<div className="col-sm-6 col-11 mx-auto">
 					{first.map((single) => (
 						<div key={single.id} className="top-card">

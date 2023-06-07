@@ -3,6 +3,7 @@ import SwiperBanner from '../../components/swiperBanner/SwiperBanner';
 import TopNav from '../../components/topNav/TopNav';
 import TopClass from '../../components/topClass/TopClass';
 import Features from '../../components/features/Features';
+import Footer from '../../components/footer/Footer';
 
 const Home = () => {
     return (
@@ -15,6 +16,9 @@ const Home = () => {
 				<Features></Features>
 			</div>
 			<TopClass></TopClass>
+			<div>
+				<Footer></Footer>
+			</div>
 		</div>
 	);
 };

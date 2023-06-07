@@ -2,37 +2,37 @@
     {
         "id": 1,
         "name": "Portrait Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/90f7e5163704389.63ea89083f742.jpg",
+        "photo": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
         "student": "150"
     },
     {
         "id": 2,
         "name": "Automobile Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/4ce4de169686803.64513a16c1ac2.jpg",
+        "photo": "https://i.postimg.cc/rsG2JsGn/My-project-2.jpg",
         "student": "140"
     },
     {
         "id": 3,
         "name": "Sports Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/fs/87cb01146405803.62b0400d93b0e.jpg",
+        "photo": "https://i.postimg.cc/CL8dBbfv/My-project-6.jpg",
         "student": "130"
     },
     {
         "id": 4,
         "name": "Wildlife Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4e3250169876597.64712b9dcc57c.jpg",
+        "photo": "https://i.postimg.cc/MZsC8LPR/My-project-3.jpg",
         "student": "120"
     },
     {
         "id": 5,
         "name": "Street Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/bbcba6169597299.644fcff7b33a3.jpg",
+        "photo": "https://i.postimg.cc/R0ZMRtNx/My-project-5.jpg",
         "student": "110"
     },
     {
         "id": 6,
         "name": "Architecture Photography",
-        "photo": "https://mir-s3-cdn-cf.behance.net/project_modules/1400/5574be171450451.646eddd7e4354.png",
+        "photo": "https://i.postimg.cc/4d6X8WsQ/My-project.png",
         "student": "100"
     }
 ]
