@@ -13,8 +13,7 @@
 
 body {
   font-family: 'Comic Neue', cursive;
-  margin: 0;
-  display: flex;
+  margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
 }

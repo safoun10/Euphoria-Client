@@ -1,0 +1,13 @@
+.banner{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 90vh;
+    user-select: none;
+    padding: 150px;
+}
+
+.banner-text-head{
+    text-shadow: 2px 2px gray;
+}
