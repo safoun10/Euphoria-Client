@@ -45,9 +45,6 @@ const TopNav = () => {
 		});
 	};
 
-
-
-	// test area
 	const [isOpen, setOpen] = useState(false);
 
 	const [show, setShow] = useState(false);
@@ -55,13 +52,8 @@ const TopNav = () => {
 	const handleClose = () => setShow(false);
 	const handleShow = () => setShow(true);
 
-	// test area
-
-
 	return (
 		<div className="mx-auto py-2 text-white" style={{ maxWidth: "1400px" }}>
-			{/* test area */}
-
 			<>
 				<div className="d-flex justify-content-between align-items-center px-3">
 					<div className="display-6 unselective d-lg-none">
@@ -193,9 +185,6 @@ const TopNav = () => {
 					</Offcanvas.Body>
 				</Offcanvas>
 			</>
-
-			{/* test area */}
-
 			<div className="d-none d-lg-block">
 				<div className="d-flex justify-content-between align-items-center px-3">
 					<div className="display-6 unselective">EUPHORIA</div>
@@ -305,43 +294,3 @@ const TopNav = () => {
 };
 
 export default TopNav;
-
-// {
-// 	user ? (
-// 		<div className="d-flex justify-content-center align-items-center gap-3">
-// 			{user?.photoURL ? (
-// 				<div
-// 					data-tooltip-id="my-tooltip"
-// 					data-tooltip-content={user.displayName}
-// 					data-tooltip-place="top"
-// 				>
-// 					<img
-// 						className="profile-img"
-// 						src={URL}
-// 						alt="profile_photo"
-// 					/>
-// 				</div>
-// 			) : (
-// 				<div>
-// 					<BsPersonCircle
-// 						data-tooltip-id="my-tooltip"
-// 						data-tooltip-content={user.email}
-// 						data-tooltip-place="top"
-// 						className="display-5 text-zero"
-// 					></BsPersonCircle>
-// 				</div>
-// 			)}
-// 			<Link className="text-decoration-none text-white">
-// 				<div onClick={signOut} className="btn btn-bg-gradient">
-// 					Logout
-// 				</div>
-// 			</Link>
-// 		</div>
-// 	) : (
-// 		<div>
-// 			<Link to={"/login"} className="text-decoration-none text-white">
-// 				<div className="btn btn-bg-gradient">Login</div>
-// 			</Link>
-// 		</div>
-// 	);
-// }
