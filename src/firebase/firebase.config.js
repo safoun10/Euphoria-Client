@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDXwQ65gOdOcuBZfiBEsnv_wSn7k0WVLtU",
-    authDomain: "euphoria-safoun.firebaseapp.com",
-    projectId: "euphoria-safoun",
-    storageBucket: "euphoria-safoun.appspot.com",
-    messagingSenderId: "463559089928",
-    appId: "1:463559089928:web:b80c13f431fdd684ed96bd"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 const app = initializeApp(firebaseConfig);
