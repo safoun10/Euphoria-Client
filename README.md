@@ -2,9 +2,9 @@
 Euphoria is a visually appealing web application that aims to provide a user-friendly and interactive experience to its visitors. It incorporates various features and functionalities while following the exact requirements. The following sections will provide an overview of the project's features, the packages and technologies used, and a link to the live site.
 
 ## Live Site
-You can access the live version of the website by visiting the following link: [Euphoria](euphoria-safoun.web.app)
+You can access the live version of the website by visiting the following link: [Euphoria](https://euphoria-safoun.web.app/)
 
-Feel free to explore the website and make the most of its features. If you have any questions or feedback, please don't hesitate to contact me .
+> Feel free to explore the website and make the most of its features. If you have any questions or feedback, please don't hesitate to contact me .
 
 
 ## Features
@@ -22,16 +22,16 @@ Feel free to explore the website and make the most of its features. If you have 
 
 ## Packages / Technologies Used
 
-- **React :** The project is built using React, a popular JavaScript library for building user interfaces.
+ * **React :** The project is built using React, a popular JavaScript library for building user interfaces.
 
-- **React Router :** React Router is used for handling routing within the application, enabling navigation between different pages.
+* **React Router :** React Router is used for handling routing within the application, enabling navigation between different pages.
 
-- **Bootstrap :** The Bootstrap and React-Bootstrap framework is used to enhance the website's responsiveness and provide a consistent and modern design.
+* **Bootstrap :** The Bootstrap and React-Bootstrap framework is used to enhance the website's responsiveness and provide a consistent and modern design.
 
-- **React Query :** The Tanstack Query (React Query) library is used in multiple places to handle data fetching, caching, and state management.
+* **React Query :** The Tanstack Query (React Query) library is used in multiple places to handle data fetching, caching, and state management.
 
-- **Axios :** Axios is used for making HTTP requests to the server, allowing seamless communication between the client and server.
+* **Axios :** Axios is used for making HTTP requests to the server, allowing seamless communication between the client and server.
 
-- **React Hook Form :** React Hook Form is employed for handling form validation and management in the registration and login pages.
+* **React Hook Form :** React Hook Form is employed for handling form validation and management in the registration and login pages.
 
-- **JWT :** JSON Web Tokens (JWT) are implemented for the login and registration systems, providing secure authentication and authorization.
+* **JWT :** JSON Web Tokens (JWT) are implemented for the login and registration systems, providing secure authentication and authorization.
