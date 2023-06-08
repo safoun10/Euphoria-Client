@@ -21,9 +21,8 @@ const Login = () => {
 		const password = data.password;
 
 		loginUser(email, password)
-			.then((res) => {
+			.then(() => {
 				toast("Welcome Back !!");
-				form.reset();
 				navigate(from, { replace: true });
 			})
 			.catch((error) => {

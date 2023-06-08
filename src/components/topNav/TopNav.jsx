@@ -21,7 +21,7 @@ const TopNav = () => {
 	const signOut = () => {
 		Swal.fire({
 			title: "Are you sure?",
-			text: "Do you really want to log out from this site ?",
+			text: "Do you really want to log out from euphoria ?",
 			icon: "warning",
 			showCancelButton: true,
 			confirmButtonColor: "#3085d6",

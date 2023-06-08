@@ -10,11 +10,11 @@ const Register = () => {
     const { createUser } = useContext(AuthContext);
 
 	const onSubmit = (data) => {
-		const name = data.name;
+		// const name = data.name;
 		const email = data.email;
 		const password = data.password;
-		const confirm = data.confirmPassword;
-		const url = data.url;
+		// const confirm = data.confirmPassword;
+		// const url = data.url;
 		if (data.password.length < 6) {
 			toast.warning("Password should be at least 6 characters long.");
             return;
@@ -37,7 +37,7 @@ const Register = () => {
             return;
 		} else {
             createUser(email, password)
-				.then((res) => {
+				.then(() => {
 					toast("Account created successfully");
 					navigate("/home");
 				})

@@ -8,7 +8,7 @@ const Banner = ({img , text}) => {
 			<div className='col-12 col-md-4 ps-5'>
 				<div className="display-1 banner-text-head text-char py-2">Euphoria</div>
 				<div className='fs-5'>{text}</div>
-                <div><Link to={"/classes"} className='btn text-white bg-char my-2 rounded-0 px-5 py-2'>Explore Courses</Link></div>
+                <div><Link to={"/classes"} className='btn text-white bg-char my-2 rounded-0 px-5 py-2'>Explore Classes</Link></div>
 			</div>
 			<div className='col-12 col-md-8'>
 				<img src={img} className='img-fluid' alt="" />
