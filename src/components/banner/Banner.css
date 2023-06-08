@@ -1,3 +1,9 @@
 .banner-text-head {
     text-shadow: 2px 2px gray;
 }
+
+@media only screen and (max-width: 500px) {
+    .responsive-text{
+        min-height: 335px;
+    }
+}

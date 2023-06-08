@@ -29,7 +29,7 @@ const TopClass = () => {
 				expert instructors. Enroll now and embark on a transformative
 				photographic journey.
 			</div>
-			<div className="row w-100">
+			<div className="row w-100 mx-auto">
 				<div className="col-sm-6 col-11 mx-auto">
 					{first.map((single) => (
 						<div key={single.id} className="top-card">

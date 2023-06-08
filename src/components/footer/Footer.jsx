@@ -15,10 +15,10 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className="row text-white w-100 p-0 m-0">
-				<div className="col-6 p-5 bg-char">
+				<div className="col-lg-6 col-12 p-5 bg-char">
 					<div className="ms-auto" style={{ maxWidth: "600px" }}>
-						<div className="d-flex justify-content-around">
-							<div>
+						<div className="row justify-content-around">
+							<div className='col-12 col-sm-6'>
 								<div className="display-6 pb-4">Navigation</div>
 								<div>
 									<div>
@@ -55,7 +55,7 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div>
+							<div className='col-12 col-sm-6'>
 								<div className="display-6 pb-4">
 									Social Links
 								</div>
@@ -101,10 +101,10 @@ const Footer = () => {
 						</div>
 					</div>
 				</div>
-				<div className="col-6 p-5 bg-char-2">
+				<div className="col-lg-6 col-12 p-5 bg-char-2">
 					<div className="me-auto " style={{ maxWidth: "600px" }}>
-						<div className="d-flex justify-content-around">
-							<div>
+						<div className="row justify-content-around">
+							<div className='col-12 col-sm-6'>
 								<div className="display-6 pb-4">
 									Contact Info
 								</div>
@@ -126,7 +126,7 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div>
+							<div className='col-12 col-sm-6'>
 								<div className="display-6 pb-4">Address</div>
 								<div>
 									<div>
