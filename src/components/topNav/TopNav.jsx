@@ -117,7 +117,7 @@ const TopNav = () => {
 										data-tooltip-id="my-tooltip"
 										data-tooltip-content={user.email}
 										data-tooltip-place="top"
-										className="display-5 text-white"
+										className="display-6 text-white"
 									></BsPersonCircle>
 								</div>
 							)}

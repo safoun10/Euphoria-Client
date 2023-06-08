@@ -39,7 +39,6 @@ const Register = () => {
             createUser(email, password)
 				.then((res) => {
 					toast("Account created successfully");
-					form.reset();
 					navigate("/home");
 				})
 				.catch((error) => {
