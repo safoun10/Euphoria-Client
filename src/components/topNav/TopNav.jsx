@@ -7,7 +7,10 @@ import { toast } from "react-toastify";
 import { BsPersonCircle } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { Alert, Button, Offcanvas } from "react-bootstrap";
+import { Button, Offcanvas } from "react-bootstrap";
+
+
+import { Divide as Hamburger } from "hamburger-react";
 
 const TopNav = () => {
 	const location = useLocation();
@@ -45,6 +48,7 @@ const TopNav = () => {
 
 
 	// test area
+	const [isOpen, setOpen] = useState(false);
 
 	const [show, setShow] = useState(false);
 
@@ -63,13 +67,9 @@ const TopNav = () => {
 					<div className="display-6 unselective d-lg-none">
 						EUPHORIA
 					</div>
-					<Button
-						variant="primary"
-						className="d-lg-none"
-						onClick={handleShow}
-					>
-						Launch
-					</Button>
+					<div onClick={handleShow} className="d-lg-none">
+						<Hamburger toggle={() => setOpen(!isOpen)} />
+					</div>
 				</div>
 
 				<Offcanvas
@@ -78,7 +78,10 @@ const TopNav = () => {
 					onHide={handleClose}
 					responsive="lg"
 				>
-					<Offcanvas.Header closeButton className="bg-char text-white">
+					<Offcanvas.Header
+						closeButton
+						className="bg-char text-white"
+					>
 						<Offcanvas.Title className="display-6 unselective">
 							Euphoria
 						</Offcanvas.Title>
