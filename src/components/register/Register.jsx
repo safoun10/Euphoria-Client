@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
+import { getAuth, signInWithPopup } from "firebase/auth";
 
+const auth = getAuth();
 const Register = () => {
 	const { register, handleSubmit } = useForm();
     const navigate = useNavigate();
-    const { createUser } = useContext(AuthContext);
+    const { createUser, GoogleProvider } = useContext(AuthContext);
 
 	const onSubmit = (data) => {
 		// const name = data.name;
@@ -47,6 +49,17 @@ const Register = () => {
             console.log(data);
             return;
 		}
+	};
+
+	const handleGoogleSignIn = () => {
+		signInWithPopup(auth, GoogleProvider)
+			.then(() => {
+				toast("You have successfully registered with Google !!");
+				navigate("/home");
+			})
+			.catch((err) => {
+				toast.error(err.message);
+			});
 	};
 
 	return (
@@ -148,6 +161,22 @@ const Register = () => {
 										>
 											Register
 										</button>
+									</div>
+									<div className="d-flex gap-2 justify-content-center pt-3">
+										<div>----------</div>
+										<div>or</div>
+										<div>----------</div>
+									</div>
+									<div>
+										<div>
+											<div
+												onClick={handleGoogleSignIn}
+												type="button"
+												className="btn rounded-0 text-white bg-dark w-100 py-2 fs-5 mt-3"
+											>
+												Register with Google
+											</div>
+										</div>
 									</div>
 
 									<div className="text-center mt-4 fs-5">
