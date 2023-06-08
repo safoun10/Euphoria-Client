@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+	const { register, handleSubmit } = useForm();
+
+	const onSubmit = (data) => {
+		console.log(data.email);
+		console.log(data.password);
+	};
+
 	return (
 		<div className="bg-photo">
 			<div className="col-md-7 col-11 mx-auto">
@@ -12,7 +20,10 @@ const Login = () => {
 					</div>
 					<hr />
 					<div className="row align-items-center">
-						<form className="mt-5 col-8">
+						<form
+							className="mt-5 col-8"
+							onSubmit={handleSubmit(onSubmit)}
+						>
 							<div>
 								<div className="pb-3">
 									<div className="fs-4">Email address</div>
@@ -24,6 +35,7 @@ const Login = () => {
 											id="email"
 											placeholder="Please enter your email address here"
 											required
+											{...register("email")}
 										/>
 									</div>
 								</div>
@@ -36,7 +48,8 @@ const Login = () => {
 											name="password"
 											id="password"
 											placeholder="Please enter your password here"
-											required
+                                            required
+											{...register("password")}
 										/>
 									</div>
 								</div>
