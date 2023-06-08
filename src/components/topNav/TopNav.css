@@ -9,3 +9,8 @@
 .unselective{
     user-select: none;
 }
+
+.profile-img{
+    width: 50px;
+    border-radius: 50%;
+}

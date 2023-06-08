@@ -7,47 +7,51 @@ import Instructors from "../src/pages/instructors/Instructors";
 import Classes from "../src/pages/classes/Classes";
 import Dashboard from "../src/pages/dashboard/Dashboard";
 import ErrPage from "../src/pages/errPage/ErrPage";
+import PrivateRoute from "../src/privateRoutes/userPrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element:<Auth></Auth>,
+		element: <Auth></Auth>,
 		children: [
 			{
-				path : "/",
-				element : <Navigate to="/home"></Navigate>
+				path: "/",
+				element: <Navigate to="/home"></Navigate>,
 			},
 			{
 				path: "/login",
-				element : <Login></Login>
+				element: <Login></Login>,
 			},
 			{
 				path: "/register",
-				element : <Register></Register>
-			}
-		]
+				element: <Register></Register>,
+			},
+		],
 	},
 	{
 		path: "/home",
-		element: <Home></Home>
+		element: <Home></Home>,
 	},
 	{
 		path: "/instructors",
-		element: <Instructors></Instructors>
+		element: <Instructors></Instructors>,
 	},
 	{
 		path: "/classes",
-		element: <Classes></Classes>
+		element: <Classes></Classes>,
 	},
 	{
 		path: "/dashboard",
-		element: <Dashboard></Dashboard>
+		element: (
+			<PrivateRoute>
+				<Dashboard></Dashboard>
+			</PrivateRoute>
+		),
 	},
 	{
 		path: "*",
-		element: <ErrPage></ErrPage>
-	}
-
+		element: <ErrPage></ErrPage>,
+	},
 ]);
 
 export default router;

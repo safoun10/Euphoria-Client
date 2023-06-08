@@ -1,14 +1,45 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { getAuth, signInWithPopup } from "firebase/auth";
+import { AuthContext } from "../../providers/AuthProvider";
+
+const auth = getAuth();
 
 const Login = () => {
+	const { loginUser, GoogleProvider } = useContext(AuthContext);
 	const { register, handleSubmit } = useForm();
 
+	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || "/home";
+
 	const onSubmit = (data) => {
-		console.log(data.email);
-		console.log(data.password);
+		const email = data.email;
+		const password = data.password;
+
+		loginUser(email, password)
+			.then((res) => {
+				toast("Welcome Back !!");
+				form.reset();
+				navigate(from, { replace: true });
+			})
+			.catch((error) => {
+				toast.error(error.message);
+			});
+	};
+
+	const handleGoogleSignIn = () => {
+		signInWithPopup(auth, GoogleProvider)
+			.then(() => {
+				toast("You have successfully signed in with Google !!");
+				navigate(from, { replace: true });
+			})
+			.catch((err) => {
+				toast.error(err.message);
+			});
 	};
 
 	return (
@@ -48,7 +79,7 @@ const Login = () => {
 											name="password"
 											id="password"
 											placeholder="Please enter your password here"
-                                            required
+											required
 											{...register("password")}
 										/>
 									</div>
@@ -72,6 +103,7 @@ const Login = () => {
 								<div>
 									<div>
 										<div
+											onClick={handleGoogleSignIn}
 											type="button"
 											className="btn rounded-0 text-white bg-dark w-100 py-2 fs-5 mt-3"
 										>
