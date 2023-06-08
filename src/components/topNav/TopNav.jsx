@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { BsPersonCircle } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { Alert, Button, Offcanvas } from "react-bootstrap";
 
 const TopNav = () => {
 	const location = useLocation();
@@ -17,7 +18,7 @@ const TopNav = () => {
 	useEffect(() => {
 		setURL(user?.photoURL);
 	}, [user]);
-	
+
 	const signOut = () => {
 		Swal.fire({
 			title: "Are you sure?",
@@ -41,105 +42,259 @@ const TopNav = () => {
 		});
 	};
 
+
+
+	// test area
+
+	const [show, setShow] = useState(false);
+
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
+
+	// test area
+
+
 	return (
 		<div className="mx-auto py-2 text-white" style={{ maxWidth: "1400px" }}>
-			<div className="d-flex justify-content-between align-items-center">
-				<div className="display-6 unselective">EUPHORIA</div>
-				<div className="d-flex gap-4">
-					<div>
-						<NavLink
-							to="/home"
-							className={
-								location.pathname == "/home"
-									? "text-decoration-none text-white fs-5 Links hover-link"
-									: "text-decoration-none text-white fs-5 Links"
-							}
-						>
-							Home
-						</NavLink>
+			{/* test area */}
+
+			<>
+				<div className="d-flex justify-content-between align-items-center px-3">
+					<div className="display-6 unselective d-lg-none">
+						EUPHORIA
 					</div>
-					<div>
-						<NavLink
-							to="/instructors"
-							className={
-								location.pathname == "/instructors"
-									? "text-decoration-none text-white fs-5 Links hover-link"
-									: "text-decoration-none text-white fs-5 Links"
-							}
-						>
-							Instructors
-						</NavLink>
-					</div>
-					<div>
-						<NavLink
-							to="/classes"
-							className={
-								location.pathname == "/classes"
-									? "text-decoration-none text-white fs-5 Links hover-link"
-									: "text-decoration-none text-white fs-5 Links"
-							}
-						>
-							Classes
-						</NavLink>
-					</div>
-					<div>
-						<NavLink
-							to="/dashboard"
-							className={
-								location.pathname == "/dashboard"
-									? "text-decoration-none text-white fs-5 Links hover-link"
-									: "text-decoration-none text-white fs-5 Links"
-							}
-						>
-							Dashboard
-						</NavLink>
-					</div>
+					<Button
+						variant="primary"
+						className="d-lg-none"
+						onClick={handleShow}
+					>
+						Launch
+					</Button>
 				</div>
-				<div>
-					{user ? (
-						<div className="d-flex justify-content-center align-items-center gap-3">
-							<Tooltip id="my-tooltip" style={{ zIndex: 100 }} />
-							{user?.photoURL ? (
-								<div
-									data-tooltip-id="my-tooltip"
-									data-tooltip-content={user.displayName}
-									data-tooltip-place="top"
+
+				<Offcanvas
+					show={show}
+					placement="end"
+					onHide={handleClose}
+					responsive="lg"
+				>
+					<Offcanvas.Header closeButton className="bg-char text-white">
+						<Offcanvas.Title className="display-6 unselective">
+							Euphoria
+						</Offcanvas.Title>
+					</Offcanvas.Header>
+					<Offcanvas.Body className="d-lg-none bg-char">
+						<div className="d-flex flex-column gap-4">
+							<div>
+								<NavLink
+									to="/home"
+									className={
+										location.pathname == "/home"
+											? "text-decoration-none text-white fs-5 Links hover-link"
+											: "text-decoration-none text-white fs-5 Links"
+									}
 								>
-									<img
-										className="profile-img"
-										src={URL}
-										alt="profile_photo"
+									Home
+								</NavLink>
+							</div>
+							<div>
+								<NavLink
+									to="/instructors"
+									className={
+										location.pathname == "/instructors"
+											? "text-decoration-none text-white fs-5 Links hover-link"
+											: "text-decoration-none text-white fs-5 Links"
+									}
+								>
+									Instructors
+								</NavLink>
+							</div>
+							<div>
+								<NavLink
+									to="/classes"
+									className={
+										location.pathname == "/classes"
+											? "text-decoration-none text-white fs-5 Links hover-link"
+											: "text-decoration-none text-white fs-5 Links"
+									}
+								>
+									Classes
+								</NavLink>
+							</div>
+							<div>
+								<NavLink
+									to="/dashboard"
+									className={
+										location.pathname == "/dashboard"
+											? "text-decoration-none text-white fs-5 Links hover-link"
+											: "text-decoration-none text-white fs-5 Links"
+									}
+								>
+									Dashboard
+								</NavLink>
+							</div>
+						</div>
+						<div>
+							{user ? (
+								<div className="d-flex align-items-center gap-3 mt-4">
+									<Tooltip
+										id="my-tooltip"
+										style={{ zIndex: 100 }}
 									/>
+									{user?.photoURL ? (
+										<div
+											data-tooltip-id="my-tooltip"
+											data-tooltip-content={
+												user.displayName
+											}
+											data-tooltip-place="bottom"
+										>
+											<img
+												className="profile-img"
+												src={URL}
+												alt="profile_photo"
+											/>
+										</div>
+									) : (
+										<div>
+											<BsPersonCircle
+												data-tooltip-id="my-tooltip"
+												data-tooltip-content={
+													user.email
+												}
+												data-tooltip-place="top"
+												className="display-6 text-white"
+											></BsPersonCircle>
+										</div>
+									)}
+									<div>
+										<Link
+											onClick={signOut}
+											className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
+										>
+											Logout
+										</Link>
+									</div>
 								</div>
 							) : (
 								<div>
-									<BsPersonCircle
-										data-tooltip-id="my-tooltip"
-										data-tooltip-content={user.email}
-										data-tooltip-place="top"
-										className="display-6 text-white"
-									></BsPersonCircle>
+									<Link
+										to="/login"
+										className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3 mt-4"
+									>
+										Login
+									</Link>
 								</div>
 							)}
+						</div>
+					</Offcanvas.Body>
+				</Offcanvas>
+			</>
+
+			{/* test area */}
+
+			<div className="d-none d-lg-block">
+				<div className="d-flex justify-content-between align-items-center px-3">
+					<div className="display-6 unselective">EUPHORIA</div>
+					<div className="d-flex gap-4">
+						<div>
+							<NavLink
+								to="/home"
+								className={
+									location.pathname == "/home"
+										? "text-decoration-none text-white fs-5 Links hover-link"
+										: "text-decoration-none text-white fs-5 Links"
+								}
+							>
+								Home
+							</NavLink>
+						</div>
+						<div>
+							<NavLink
+								to="/instructors"
+								className={
+									location.pathname == "/instructors"
+										? "text-decoration-none text-white fs-5 Links hover-link"
+										: "text-decoration-none text-white fs-5 Links"
+								}
+							>
+								Instructors
+							</NavLink>
+						</div>
+						<div>
+							<NavLink
+								to="/classes"
+								className={
+									location.pathname == "/classes"
+										? "text-decoration-none text-white fs-5 Links hover-link"
+										: "text-decoration-none text-white fs-5 Links"
+								}
+							>
+								Classes
+							</NavLink>
+						</div>
+						<div>
+							<NavLink
+								to="/dashboard"
+								className={
+									location.pathname == "/dashboard"
+										? "text-decoration-none text-white fs-5 Links hover-link"
+										: "text-decoration-none text-white fs-5 Links"
+								}
+							>
+								Dashboard
+							</NavLink>
+						</div>
+					</div>
+					<div>
+						{user ? (
+							<div className="d-flex justify-content-center align-items-center gap-3">
+								<Tooltip
+									id="my-tooltip"
+									style={{ zIndex: 100 }}
+								/>
+								{user?.photoURL ? (
+									<div
+										data-tooltip-id="my-tooltip"
+										data-tooltip-content={user.displayName}
+										data-tooltip-place="top"
+									>
+										<img
+											className="profile-img"
+											src={URL}
+											alt="profile_photo"
+										/>
+									</div>
+								) : (
+									<div>
+										<BsPersonCircle
+											data-tooltip-id="my-tooltip"
+											data-tooltip-content={user.email}
+											data-tooltip-place="top"
+											className="display-6 text-white"
+										></BsPersonCircle>
+									</div>
+								)}
+								<div>
+									<Link
+										onClick={signOut}
+										className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
+									>
+										Logout
+									</Link>
+								</div>
+							</div>
+						) : (
 							<div>
 								<Link
-									onClick={signOut}
+									to="/login"
 									className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
 								>
-									Logout
+									Login
 								</Link>
 							</div>
-						</div>
-					) : (
-						<div>
-							<Link
-								to="/login"
-								className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
-							>
-								Login
-							</Link>
-						</div>
-					)}
+						)}
+					</div>
 				</div>
 			</div>
 		</div>
