@@ -4,7 +4,6 @@ import "./TopNav.css";
 
 const TopNav = () => {
 	const location = useLocation();
-	console.log(location.pathname);
 	return (
 		<div className="mx-auto py-2 text-white" style={{ maxWidth: "1400px" }}>
 			<div className="d-flex justify-content-between align-items-center">
