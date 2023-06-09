@@ -20,7 +20,7 @@ const Banner = ({img , text}) => {
 				</div>
 			</div>
 			<div className="col-12 col-md-8">
-				<img src={img} className="img-fluid" alt="" />
+				<img src={img} className="img-fluid" alt="banner" />
 			</div>
 		</div>
 	);

@@ -9,7 +9,6 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { Button, Offcanvas } from "react-bootstrap";
 
-
 import { Divide as Hamburger } from "hamburger-react";
 
 const TopNav = () => {
@@ -145,6 +144,7 @@ const TopNav = () => {
 											data-tooltip-place="bottom"
 										>
 											<img
+												referrerpolicy="no-referrer"
 												className="profile-img"
 												src={URL}
 												alt="profile_photo"
@@ -252,6 +252,7 @@ const TopNav = () => {
 										data-tooltip-place="top"
 									>
 										<img
+											referrerpolicy="no-referrer"
 											className="profile-img"
 											src={URL}
 											alt="profile_photo"
