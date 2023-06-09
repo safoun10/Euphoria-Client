@@ -2,8 +2,12 @@
     text-shadow: 2px 2px gray;
 }
 
+.banner-text-head-white {
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.356);
+}
+
 @media only screen and (max-width: 500px) {
-    .responsive-text{
+    .responsive-text {
         min-height: 335px;
     }
 }

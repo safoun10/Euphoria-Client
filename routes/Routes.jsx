@@ -8,6 +8,7 @@ import Classes from "../src/pages/classes/Classes";
 import Dashboard from "../src/pages/dashboard/Dashboard";
 import ErrPage from "../src/pages/errPage/ErrPage";
 import PrivateRoute from "../src/privateRoutes/userPrivateRoute/PrivateRoute";
+import { ThemeProvider } from "../src/providers/ThemeProvider";
 
 const router = createBrowserRouter([
 	{
@@ -30,7 +31,9 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/home",
-		element: <Home></Home>,
+		element: (
+			<Home></Home>
+		),
 	},
 	{
 		path: "/instructors",

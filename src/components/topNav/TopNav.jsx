@@ -7,12 +7,14 @@ import { toast } from "react-toastify";
 import { BsPersonCircle } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
-import { Button, Offcanvas } from "react-bootstrap";
+import { Offcanvas } from "react-bootstrap";
 
 import { Divide as Hamburger } from "hamburger-react";
+import { ThemeContext } from "../../providers/ThemeProvider";
 
 const TopNav = () => {
 	const location = useLocation();
+	const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
 
 	const { user, logout } = useContext(AuthContext);
 	const [URL, setURL] = useState("");
@@ -236,6 +238,16 @@ const TopNav = () => {
 							>
 								Dashboard
 							</NavLink>
+						</div>
+						<div>
+							<div
+								onClick={toggleTheme}
+								className="btn bg-dark rounded-0 text-white"
+							>
+								{isDarkTheme
+									? "Switch to Light Theme"
+									: "Switch to Dark Theme"}
+							</div>
 						</div>
 					</div>
 					<div>
