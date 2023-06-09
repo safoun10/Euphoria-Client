@@ -47,8 +47,6 @@ const Register = () => {
 						image: url,
 						role: "user",
 					};
-
-					console.log(savedUser);
 					updateUserProfile(name, url)
 						.then(() => {
 							fetch("http://localhost:5000/users", {
@@ -79,9 +77,32 @@ const Register = () => {
 
 	const handleGoogleSignIn = () => {
 		signInWithPopup(auth, GoogleProvider)
-			.then(() => {
-				toast("You have successfully registered with Google !!");
-				navigate("/home");
+			.then((res) => {
+				const loggedUser = res.user;
+
+				const savedUser = {
+					name: loggedUser.displayName,
+					email: loggedUser.email,
+					image: loggedUser.photoURL,
+					role: "user",
+				};
+
+				fetch("http://localhost:5000/users", {
+					method: "POST",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(savedUser),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (data.insertedID) {
+							toast(
+								"You have successfully registered with Google !!"
+							);
+							navigate("/home");
+						}
+					});
 			})
 			.catch((err) => {
 				toast.error(err.message);

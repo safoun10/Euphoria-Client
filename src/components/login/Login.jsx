@@ -35,7 +35,6 @@ const Login = () => {
 		signInWithPopup(auth, GoogleProvider)
 			.then((res) => {
 				const loggedUser = res.user;
-				console.log(loggedUser);
 
 				const savedUser = {
 					name: loggedUser.displayName,
@@ -52,7 +51,6 @@ const Login = () => {
 				})
 					.then((res) => res.json())
 					.then((data) => {
-						console.log(data);
 						if (data.insertedID) {
 							toast(
 								"You have successfully signed in with Google !!"
