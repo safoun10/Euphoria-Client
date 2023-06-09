@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "denied"
+    },
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "pending"
+    },
+    {
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/X7LchMsS/My-project-4.jpg",
+        "instructor_name": "Safoun",
+        "instructor_email": "safoun.official@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    }
+]

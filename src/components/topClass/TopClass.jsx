@@ -6,7 +6,7 @@ const TopClass = () => {
 	const [top, setTop] = useState([]);
 
 	const baseURL = "popular.json";
-	
+
 	useEffect(() => {
 		axios.get(baseURL).then((response) => {
 			setTop(response.data);

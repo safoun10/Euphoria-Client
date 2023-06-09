@@ -13,8 +13,6 @@ const Instructors = () => {
         .then(data => setInstructors(data))
     } ,[]);
 
-    console.log(instructors);
-
 	return (
 		<div>
 			<div className="bg-char">
@@ -22,7 +20,7 @@ const Instructors = () => {
 			</div>
 			<div className="mx-auto" style={{ maxWidth: "1200px" }}>
                 <div>
-                    <div className="display-4 text-center my-5">
+                    <div className="display-4 text-center my-5 text-char">
                         Our Honorable hard working instructors
                     </div>
                 </div>
