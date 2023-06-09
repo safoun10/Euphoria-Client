@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Instructor1",
+        "email": "sultanhkr001@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor2",
+        "email": "sultanhkr002@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor3",
+        "email": "sultanhkr003@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor4",
+        "email": "sultanhkr004@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor5",
+        "email": "sultanhkr005@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor6",
+        "email": "sultanhkr006@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Instructor7",
+        "email": "sultanhkr007@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "instructor"
+    },
+    {
+        "name": "Admin!",
+        "email": "sultanhkr101@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "admin"
+    }
+]
