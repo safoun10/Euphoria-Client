@@ -9,7 +9,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 const auth = getAuth();
 
 const Login = () => {
-	const { loginUser, GoogleProvider } = useContext(AuthContext);
+	const { loginUser, GoogleProvider, updateUserProfile } =
+		useContext(AuthContext);
 	const { register, handleSubmit } = useForm();
 
 	const navigate = useNavigate();
@@ -32,9 +33,33 @@ const Login = () => {
 
 	const handleGoogleSignIn = () => {
 		signInWithPopup(auth, GoogleProvider)
-			.then(() => {
-				toast("You have successfully signed in with Google !!");
-				navigate(from, { replace: true });
+			.then((res) => {
+				const loggedUser = res.user;
+				console.log(loggedUser);
+
+				const savedUser = {
+					name: loggedUser.displayName,
+					email: loggedUser.email,
+					image: loggedUser.photoURL,
+					role: "user",
+				};
+				fetch("http://localhost:5000/users", {
+					method: "POST",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(savedUser),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						console.log(data);
+						if (data.insertedID) {
+							toast(
+								"You have successfully signed in with Google !!"
+							);
+							navigate(from, { replace: true });
+						}
+					});
 			})
 			.catch((err) => {
 				toast.error(err.message);

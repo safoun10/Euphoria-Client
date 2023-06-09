@@ -8,46 +8,72 @@ import { getAuth, signInWithPopup } from "firebase/auth";
 const auth = getAuth();
 const Register = () => {
 	const { register, handleSubmit } = useForm();
-    const navigate = useNavigate();
-    const { createUser, GoogleProvider } = useContext(AuthContext);
+	const navigate = useNavigate();
+	const { createUser, GoogleProvider, updateUserProfile } =
+		useContext(AuthContext);
 
 	const onSubmit = (data) => {
-		// const name = data.name;
+		const name = data.name;
 		const email = data.email;
 		const password = data.password;
-		// const confirm = data.confirmPassword;
-		// const url = data.url;
+		const confirm = data.confirmPassword;
+		const url = data.url;
 		if (data.password.length < 6) {
 			toast.warning("Password should be at least 6 characters long.");
-            return;
+			return;
 		}
 		if (!/[A-Z]/.test(data.password)) {
 			toast.warning(
 				"Password should contain at least one capital letter."
 			);
-            return;
+			return;
 		}
 		if (!/[^a-zA-Z0-9]/.test(data.password)) {
 			toast.warning(
 				"Password should contain at least one special character."
 			);
-            return;
-		} else if (data.password !== data.confirmPassword) {
+			return;
+		} else if (password !== confirm) {
 			toast.error(
 				"Your confirming password is wrong . Please try again."
 			);
-            return;
+			return;
 		} else {
-            createUser(email, password)
+			createUser(email, password)
 				.then(() => {
-					toast("Account created successfully");
-					navigate("/home");
+					const savedUser = {
+						name: name,
+						email: email,
+						image: url,
+						role: "user",
+					};
+
+					console.log(savedUser);
+					updateUserProfile(name, url)
+						.then(() => {
+							fetch("http://localhost:5000/users", {
+								method: "POST",
+								headers: {
+									"content-type": "application/json",
+								},
+								body: JSON.stringify(savedUser),
+							})
+								.then((res) => res.json())
+								.then((data) => {
+									if (data.insertedID) {
+										toast("Account created successfully");
+										navigate("/home");
+									}
+								});
+						})
+						.catch((err) => {
+							toast.error(err.message);
+						});
 				})
 				.catch((error) => {
 					toast.error(error.message);
 				});
-            console.log(data);
-            return;
+			return;
 		}
 	};
 

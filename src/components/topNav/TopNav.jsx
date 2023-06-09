@@ -144,7 +144,7 @@ const TopNav = () => {
 											data-tooltip-place="bottom"
 										>
 											<img
-												referrerpolicy="no-referrer"
+												referrerPolicy="no-referrer"
 												className="profile-img"
 												src={URL}
 												alt="profile_photo"
@@ -252,7 +252,7 @@ const TopNav = () => {
 										data-tooltip-place="top"
 									>
 										<img
-											referrerpolicy="no-referrer"
+											referrerPolicy="no-referrer"
 											className="profile-img"
 											src={URL}
 											alt="profile_photo"
