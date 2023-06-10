@@ -60,13 +60,13 @@ const Register = () => {
 								.then((data) => {
 									if (data.insertedID) {
 										toast("Account created successfully");
-										navigate("/home");
 									}
 								});
 						})
 						.catch((err) => {
 							toast.error(err.message);
 						});
+					navigate("/home");
 				})
 				.catch((error) => {
 					toast.error(error.message);

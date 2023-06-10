@@ -9,13 +9,25 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ThemeProvider } from "./providers/ThemeProvider";
 
+import {
+	QueryClient,
+	QueryClientProvider,
+} from "@tanstack/react-query";
+import { RoleProvider } from "./providers/RoleProvider";
+
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
 		<AuthProvider>
-			<ThemeProvider>
-				<RouterProvider router={router} />
-				<ToastContainer />
-			</ThemeProvider>
+			<RoleProvider>
+				<ThemeProvider>
+					<QueryClientProvider client={queryClient}>
+						<RouterProvider router={router} />
+						<ToastContainer />
+					</QueryClientProvider>
+				</ThemeProvider>
+			</RoleProvider>
 		</AuthProvider>
 	</React.StrictMode>
 );
