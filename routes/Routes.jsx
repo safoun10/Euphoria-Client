@@ -8,7 +8,8 @@ import Classes from "../src/pages/classes/Classes";
 import Dashboard from "../src/pages/dashboard/Dashboard";
 import ErrPage from "../src/pages/errPage/ErrPage";
 import PrivateRoute from "../src/privateRoutes/userPrivateRoute/PrivateRoute";
-import { ThemeProvider } from "../src/providers/ThemeProvider";
+import UserSelectedClasses from "../src/components/userSelectedClasses/UserSelectedClasses";
+import UserEnrolledClasses from "../src/components/userEnrolledClasses/userEnrolledClasses";
 
 const router = createBrowserRouter([
 	{
@@ -31,9 +32,7 @@ const router = createBrowserRouter([
 	},
 	{
 		path: "/home",
-		element: (
-			<Home></Home>
-		),
+		element: <Home></Home>,
 	},
 	{
 		path: "/instructors",
@@ -50,6 +49,16 @@ const router = createBrowserRouter([
 				<Dashboard></Dashboard>
 			</PrivateRoute>
 		),
+		children: [
+			{
+				path: "user-selected-classes",
+				element: <UserSelectedClasses></UserSelectedClasses>,
+			},
+			{
+				path: "user-enrolled-classes",
+				element: <UserEnrolledClasses></UserEnrolledClasses>,
+			},
+		],
 	},
 	{
 		path: "*",
