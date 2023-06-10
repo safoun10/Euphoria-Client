@@ -245,8 +245,8 @@ const TopNav = () => {
 								className="btn bg-dark rounded-0 text-white"
 							>
 								{isDarkTheme
-									? "Switch to Light Theme"
-									: "Switch to Dark Theme"}
+									? "Light"
+									: "Dark"}
 							</div>
 						</div>
 					</div>

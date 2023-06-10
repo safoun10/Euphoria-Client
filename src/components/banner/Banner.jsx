@@ -8,7 +8,7 @@ const Banner = ({ img, text }) => {
 	return (
 		<div
 			className={`row g-0 align-items-center ${
-				isDarkTheme ? "bg-char-2 text-white" : "bg-white text-char"
+				isDarkTheme ? "bg-dark text-white" : "bg-white text-char"
 			}`}
 		>
 			<div className="col-12 col-md-4 ps-5 responsive-text">
