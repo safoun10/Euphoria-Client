@@ -23,6 +23,7 @@ export const RoleProvider = ({ children }) => {
 			});
 	}, [user]);
 
+	const db_user = user_from_db[0];
 	const userRole = user_from_db[0]?.role;
 
 	useEffect(() => {
@@ -30,14 +31,14 @@ export const RoleProvider = ({ children }) => {
 			setIsStudent(true);
 		} else if (userRole == "instructor") {
 			setIsInstructor(true);
-		} else {
+		} else if (userRole == "admin") {
 			setIsAdmin(true);
 		}
-	}, []);
+	}, [userRole]);
 
 	return (
 		<RoleContext.Provider
-			value={{ userRole, isAdmin, isInstructor, isStudent }}
+			value={{ db_user, userRole, isAdmin, isInstructor, isStudent }}
 		>
 			{children}
 		</RoleContext.Provider>

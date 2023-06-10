@@ -13,9 +13,10 @@ const ErrPage = () => {
 				<div className="fs-5 text-center text-char py-2">
 					oops !! ভুল করে ভুল পেজ এ চলে আসলাম ! 🙂
 				</div>
+				<div className="text-brown">(Status code : 404 | page not found)</div>
 				<div>
 					<Link
-						to="/home"
+						to="/"
 						className="btn bg-char text-white rounded-0 px-5 py-2 my-3 text-decoration-none"
 					>
 						{"<-"} Go Back to Homepage

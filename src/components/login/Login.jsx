@@ -55,9 +55,9 @@ const Login = () => {
 							toast(
 								"You have successfully signed in with Google !!"
 							);
-							navigate(from, { replace: true });
 						}
 					});
+				navigate(from, { replace: true });
 			})
 			.catch((err) => {
 				toast.error(err.message);
