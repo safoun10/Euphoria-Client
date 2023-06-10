@@ -15,8 +15,6 @@ const Classes = () => {
 		});
 	}, []);
 
-	console.log(classes);
-
 	return (
 		<div>
 			<div className="bg-char">
