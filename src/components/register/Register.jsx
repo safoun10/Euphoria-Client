@@ -66,6 +66,7 @@ const Register = () => {
 						.catch((err) => {
 							toast.error(err.message);
 						});
+					toast("Account created successfully");
 					navigate("/home");
 				})
 				.catch((error) => {

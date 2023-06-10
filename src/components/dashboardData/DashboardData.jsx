@@ -5,18 +5,17 @@ import { RoleContext } from "../../providers/RoleProvider";
 
 const DashboardData = () => {
 	const { isAdmin, isInstructor, isStudent } = useContext(RoleContext);
-
 	return (
 		<div className="w-100 row">
 			<div className="col-4 bg-brown text-white p-5 height-full">
 				<div className="display-2 text-center text-cursive pb-5">
 					{isAdmin
-						? "Admin"
+						? "Admin "
 						: isInstructor
-						? "Instructor"
+						? "Instructor "
 						: isStudent
-						? "Student"
-						: ""}{" "}
+						? "Student "
+						: ""}
 					Dashboard
 				</div>
 				{/************************************************************************************/}
@@ -91,7 +90,7 @@ const DashboardData = () => {
 							</Link>
 						</div>
 					) : (
-						"Something Went wrong"
+						"Please wait for a moment till data loads . Sorry for the inconvenience .."
 					)}
 				</div>
 				{/************************************************************************************/}
