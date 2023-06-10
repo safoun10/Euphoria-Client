@@ -15,6 +15,7 @@ import InstructorClasses from "../src/components/instructorClasses/InstructorCla
 import InstructorFeedback from "../src/components/instructorFeedback/InstructorFeedback";
 import AdminManageClasses from "../src/components/adminManageClasses/AdminManageClasses";
 import AdminManageUsers from "../src/components/adminManageUsers/AdminManageUsers";
+import DefaultDash from "../src/components/defaultDash/DefaultDash";
 
 const router = createBrowserRouter([
 	{
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
 			</PrivateRoute>
 		),
 		children: [
+			{
+				path : "/dashboard",
+				element: <DefaultDash></DefaultDash>
+			},
 			{
 				path: "user-selected-classes",
 				element: <UserSelectedClasses></UserSelectedClasses>,
