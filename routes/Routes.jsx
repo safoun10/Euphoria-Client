@@ -16,6 +16,9 @@ import InstructorFeedback from "../src/components/instructorFeedback/InstructorF
 import AdminManageClasses from "../src/components/adminManageClasses/AdminManageClasses";
 import AdminManageUsers from "../src/components/adminManageUsers/AdminManageUsers";
 import DefaultDash from "../src/components/defaultDash/DefaultDash";
+import AdminRoute from "../src/privateRoutes/adminRoute/AdminRoute";
+import InstructorRoute from "../src/privateRoutes/instructorRoute/InstructorRoute";
+import StudentRoute from "../src/privateRoutes/studentRoute/StudentRoute";
 
 const router = createBrowserRouter([
 	{
@@ -57,36 +60,64 @@ const router = createBrowserRouter([
 		),
 		children: [
 			{
-				path : "/dashboard",
-				element: <DefaultDash></DefaultDash>
+				path: "/dashboard",
+				element: <DefaultDash></DefaultDash>,
 			},
 			{
 				path: "user-selected-classes",
-				element: <UserSelectedClasses></UserSelectedClasses>,
+				element: (
+					<StudentRoute>
+						<UserSelectedClasses></UserSelectedClasses>
+					</StudentRoute>
+				),
 			},
 			{
 				path: "user-enrolled-classes",
-				element: <UserEnrolledClasses></UserEnrolledClasses>,
+				element: (
+					<StudentRoute>
+						<UserEnrolledClasses></UserEnrolledClasses>
+					</StudentRoute>
+				),
 			},
 			{
 				path: "instructor-add-a-class",
-				element: <AddAClass></AddAClass>,
+				element: (
+					<InstructorRoute>
+						<AddAClass></AddAClass>
+					</InstructorRoute>
+				),
 			},
 			{
 				path: "instructor-classes",
-				element: <InstructorClasses></InstructorClasses>,
+				element: (
+					<InstructorRoute>
+						<InstructorClasses></InstructorClasses>
+					</InstructorRoute>
+				),
 			},
 			{
 				path: "instructor-feedbacks",
-				element: <InstructorFeedback></InstructorFeedback>,
+				element: (
+					<InstructorRoute>
+						<InstructorFeedback></InstructorFeedback>
+					</InstructorRoute>
+				),
 			},
 			{
 				path: "admin-manage-classes",
-				element: <AdminManageClasses></AdminManageClasses>,
+				element: (
+					<AdminRoute>
+						<AdminManageClasses></AdminManageClasses>
+					</AdminRoute>
+				),
 			},
 			{
 				path: "admin-manage-users",
-				element: <AdminManageUsers></AdminManageUsers>,
+				element: (
+					<AdminRoute>
+						<AdminManageUsers></AdminManageUsers>
+					</AdminRoute>
+				),
 			},
 		],
 	},
