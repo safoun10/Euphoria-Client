@@ -4,13 +4,15 @@ import "./TopNav.css";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
-import { BsPersonCircle } from "react-icons/bs";
+import { BsCloud, BsPersonCircle, BsSun } from "react-icons/bs";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { Offcanvas } from "react-bootstrap";
 
 import { Divide as Hamburger } from "hamburger-react";
 import { ThemeContext } from "../../providers/ThemeProvider";
+
+import { BsEye } from "react-icons/bs";
 
 const TopNav = () => {
 	const location = useLocation();
@@ -242,11 +244,17 @@ const TopNav = () => {
 						<div>
 							<div
 								onClick={toggleTheme}
-								className="btn bg-dark rounded-0 text-white"
+								className="btn bg-dark rounded-2 px-4 text-white"
 							>
-								{isDarkTheme
-									? "Light"
-									: "Dark"}
+								{isDarkTheme ? (
+									<div>
+										<BsSun></BsSun>
+									</div>
+								) : (
+									<div>
+										<BsCloud></BsCloud>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>

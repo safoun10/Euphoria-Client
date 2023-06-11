@@ -17,8 +17,8 @@ const TopClass = () => {
 	const last = top.slice(3, 6);
 
 	return (
-		<div className="mx-auto mb-5 w-100" style={{ maxWidth: "1200px" }}>
-			<div className="text-center display-1 mt-5 pb-1 text-cursive">
+		<div className="mx-auto pb-5 w-100" style={{ maxWidth: "1200px" }}>
+			<div className="text-center display-1 pt-5 pb-1 text-cursive">
 				Visit our top <span className="text-brown">Photography</span>{" "}
 				classes
 			</div>
