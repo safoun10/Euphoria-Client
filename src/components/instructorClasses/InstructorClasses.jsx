@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
-import SingleClass from '../singleClass/singleClass';
 import SingleInstructorClass from '../singleInstructorClass/SingleInstructorClass';
 
 const InstructorClasses = () => {
@@ -17,8 +16,6 @@ const InstructorClasses = () => {
             setAll_classes(filtered_data);
         })
     } ,[]);
-
-    console.log(all_class);
 
     return (
 		<div>

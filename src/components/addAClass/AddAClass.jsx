@@ -38,9 +38,7 @@ const AddAClass = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				if (data.insertedID) {
-					console.log(data);
-				}
+				// 
 			});
 		toast("Class Added Successfully !!");
         reset();
