@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../providers/AuthProvider";
 import { getAuth, signInWithPopup } from "firebase/auth";
+
+import { BsEye } from "react-icons/bs";
 
 const auth = getAuth();
 const Register = () => {
@@ -110,6 +112,12 @@ const Register = () => {
 			});
 	};
 
+	const [show , setShow] = useState(false);
+
+	const onShow = () => {
+		setShow(!show);
+	}
+
 	return (
 		<div>
 			<div className="bg-photo">
@@ -157,16 +165,19 @@ const Register = () => {
 									</div>
 									<div className="pb-3">
 										<div className="fs-4">Password</div>
-										<div>
+										<div className="d-flex align-items-center">
 											<input
 												className="w-100 px-3 py-2"
-												type="password"
+												type={show ? "text" : "password"}
 												name="password"
 												id="password"
 												placeholder="Please enter your password here"
 												required
 												{...register("password")}
 											/>
+											<div title="show password" onClick={onShow} className="btn bg-dark text-white rounded-0 py-2">
+												<BsEye></BsEye>
+											</div>
 										</div>
 									</div>
 									<div className="pb-3">

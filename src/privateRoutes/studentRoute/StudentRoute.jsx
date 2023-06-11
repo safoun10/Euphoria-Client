@@ -4,9 +4,9 @@ import { AuthContext } from '../../providers/AuthProvider';
 import { RoleContext } from '../../providers/RoleProvider';
 import { TailSpin } from 'react-loader-spinner';
 
-const StudentRoute = () => {
+const StudentRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
-	const { isAdmin } = useContext(RoleContext);
+	const { isStudent } = useContext(RoleContext);
 
 	const location = useLocation();
 
@@ -31,7 +31,7 @@ const StudentRoute = () => {
 			</div>
 		);
 	}
-	if (user && isAdmin) {
+	if (user && isStudent) {
 		return children;
 	}
 	return <Navigate to="/" state={{ from: location }} replace></Navigate>;
