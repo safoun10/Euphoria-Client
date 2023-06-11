@@ -12,18 +12,45 @@ const AdminSingleClass = ({ single }) => {
 		seats,
 		price,
 		status,
+		_id,
 	} = single;
+
+	const [newStatus, setNewStats] = useState(status);
+
+	const onApprove = () => {
+		setNewStats("approved");
+		return;
+	};
+	const onDeny = () => {
+		setNewStats("denied");
+		return;
+	};
+
+	const db_data = { id: _id, status: newStatus };
+
+	fetch("http://localhost:5000/all-classes", {
+		method: "PATCH",
+		headers: {
+			"content-type": "application/json",
+		},
+		body: JSON.stringify(db_data),
+	})
+		.then((res) => res.json())
+		.then((data) => {
+			if (data.insertedID) {
+				console.log(data);
+			}
+		});
 
 	useEffect(() => {
 		if (status === "pending") {
 			setUnSelectable(false);
 			return;
-		}
-		else if (status === "approved" || "denied") {
+		} else if (status === "approved" || "denied") {
 			setUnSelectable(true);
 			return;
 		}
-	}, [status]);
+	}, [status , db_data.status]);
 
 	return (
 		<div className="row align-items-center border-class rounded-4">
@@ -40,12 +67,14 @@ const AdminSingleClass = ({ single }) => {
 			<div className="col-2">{status}</div>
 			<div className="col-2">
 				<button
+					onClick={onApprove}
 					disabled={unSelectable ? true : false}
 					className="btn bg-dark text-white rounded-3 w-100 my-1"
 				>
 					Approve
 				</button>
 				<button
+					onClick={onDeny}
 					disabled={unSelectable ? true : false}
 					className="btn bg-dark text-white rounded-3 w-100 my-1"
 				>
