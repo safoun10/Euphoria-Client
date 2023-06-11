@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./AdminSingleClass.css";
+import Swal from "sweetalert2";
 
-const AdminSingleClass = ({ single }) => {
+const AdminSingleClass = ({ single, setTest }) => {
 	const [unSelectable, setUnSelectable] = useState(false);
 
 	const {
@@ -18,11 +19,19 @@ const AdminSingleClass = ({ single }) => {
 	const [newStatus, setNewStats] = useState(status);
 
 	const onApprove = () => {
+		Swal.fire(
+			"Thanks for Approving ! You may need to wait for a couple of seconds for the server to respond and automatically refresh the status . Thanks for your patience ."
+		);
 		setNewStats("approved");
+		setTest(true);
 		return;
 	};
 	const onDeny = () => {
+		Swal.fire(
+			"Class add request denied ! You may need to wait for a couple of seconds for the server to respond and automatically refresh the status . Thanks for your patience ."
+		);
 		setNewStats("denied");
+		setTest(true);
 		return;
 	};
 
@@ -50,19 +59,19 @@ const AdminSingleClass = ({ single }) => {
 			setUnSelectable(true);
 			return;
 		}
-	}, [status , db_data.status]);
+	}, [status, db_data.status]);
 
 	return (
 		<div className="row align-items-center border-class rounded-4">
 			<div className="col-4">
-				<img src={image} className="img-fluid" />
+				<img src={image} alt="class image" className="img-fluid" />
 			</div>
 			<div className="col-4">
 				<div className="fs-4 fw-light">{name}</div>
 				<div>Instructor : {instructor_name}</div>
 				<div>{instructor_email}</div>
-				<div>{price}</div>
-				<div>{seats}</div>
+				<div>Price :  {price}</div>
+				<div>Available Seats : {seats}</div>
 			</div>
 			<div className="col-2">{status}</div>
 			<div className="col-2">
