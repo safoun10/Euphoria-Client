@@ -5,6 +5,7 @@ import TopClass from "../../components/topClass/TopClass";
 import Features from "../../components/features/Features";
 import Footer from "../../components/footer/Footer";
 import { ThemeContext } from "../../providers/ThemeProvider";
+import TopInstructors from "../../components/topInstructors/TopInstructors";
 
 const Home = () => {
 	const { isDarkTheme } = useContext(ThemeContext);
@@ -17,8 +18,19 @@ const Home = () => {
 			<div className={isDarkTheme ? "bg-char" : "bg-brown"}>
 				<Features></Features>
 			</div>
-			<div className={isDarkTheme ? "bg-brown text-white" : "bg-white text-char"}>
+			<div
+				className={
+					isDarkTheme ? "bg-brown text-white" : "bg-white text-char"
+				}
+			>
 				<TopClass></TopClass>
+			</div>
+			<div
+				className={
+					isDarkTheme ? "bg-dark" : ""
+				}
+			>
+				<TopInstructors></TopInstructors>
 			</div>
 			<div>
 				<Footer></Footer>
