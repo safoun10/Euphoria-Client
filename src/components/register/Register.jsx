@@ -127,9 +127,9 @@ const Register = () => {
 							Register your account
 						</div>
 						<hr />
-						<div className="row align-items-center">
+						<div>
 							<form
-								className="mt-5 col-8"
+								className="mt-5"
 								onSubmit={handleSubmit(onSubmit)}
 							>
 								<div>
@@ -249,13 +249,6 @@ const Register = () => {
 									</div>
 								</div>
 							</form>
-							<div className="col-4">
-								<img
-									className="img-fluid"
-									src="https://i.postimg.cc/PqgHZqNc/istockphoto-1031071002-612x612-removebg-preview.png"
-									alt="photo"
-								/>
-							</div>
 						</div>
 					</div>
 				</div>
