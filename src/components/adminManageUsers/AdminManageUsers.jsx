@@ -10,7 +10,7 @@ const AdminManageUsers = () => {
 		fetch("http://localhost:5000/all-users")
 			.then((res) => res.json())
 			.then((data) => setAll_users(data));
-	}, [ test]);
+	}, [ all_users , test]);
 
     return (
 		<div className="p-4">

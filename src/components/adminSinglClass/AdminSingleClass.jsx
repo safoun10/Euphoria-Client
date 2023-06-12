@@ -20,7 +20,9 @@ const AdminSingleClass = ({ single, setTest }) => {
 
 	const onApprove = () => {
 		Swal.fire(
-			"Thanks for Approving ! You may need to wait for a couple of seconds for the server to respond and automatically refresh the status . Thanks for your patience ."
+			"Thanks for Approving !",
+			"You may need to wait for a couple of seconds for the server to respond and automatically refresh the role . Thanks for your patience .",
+			"success"
 		);
 		setNewStats("approved");
 		setTest(true);
@@ -28,7 +30,9 @@ const AdminSingleClass = ({ single, setTest }) => {
 	};
 	const onDeny = () => {
 		Swal.fire(
-			"Class add request denied ! You may need to wait for a couple of seconds for the server to respond and automatically refresh the status . Thanks for your patience ."
+			"Class add request denied !",
+			"You may need to wait for a couple of seconds for the server to respond and automatically refresh the role . Thanks for your patience .",
+			"success"
 		);
 		setNewStats("denied");
 		setTest(true);
