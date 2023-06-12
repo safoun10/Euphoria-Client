@@ -6,12 +6,11 @@ import InstructorCard from "../../components/instructorCard/InstructorCard";
 const Instructors = () => {
 	const [instructors, setInstructors] = useState([]);
 
-
-    useEffect(() => {
-        fetch("http://localhost:5000/instructors")
-        .then(res => res.json())
-        .then(data => setInstructors(data))
-    } ,[]);
+	useEffect(() => {
+		fetch("https://euphoria-server.vercel.app/instructors")
+			.then((res) => res.json())
+			.then((data) => setInstructors(data));
+	}, []);
 
 	return (
 		<div>
@@ -19,11 +18,11 @@ const Instructors = () => {
 				<TopNav></TopNav>
 			</div>
 			<div className="mx-auto" style={{ maxWidth: "1200px" }}>
-                <div>
-                    <div className="display-4 text-center my-5 text-char">
-                        Our Honorable hard working instructors
-                    </div>
-                </div>
+				<div>
+					<div className="display-4 text-center my-5 text-char">
+						Our Honorable hard working instructors
+					</div>
+				</div>
 				<div className="row mb-5">
 					{instructors.map((data) => (
 						<InstructorCard

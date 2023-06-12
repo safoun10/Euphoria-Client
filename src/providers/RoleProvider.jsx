@@ -14,16 +14,16 @@ export const RoleProvider = ({ children }) => {
 	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/all-users")
+		fetch("https://euphoria-server.vercel.app/all-users")
 			.then((res) => res.json())
 			.then((data) => {
 				const exact_user = data.filter(
 					(single) => single?.email === user?.email
 				);
 				setUsers(exact_user);
-				setLoading(false)
+				setLoading(false);
 			});
-	}, [user , loading]);
+	}, [user, loading]);
 
 	const db_user = user_from_db[0];
 	const userRole = user_from_db[0]?.role;
@@ -40,7 +40,14 @@ export const RoleProvider = ({ children }) => {
 
 	return (
 		<RoleContext.Provider
-			value={{ setLoading , db_user, userRole, isAdmin, isInstructor, isStudent }}
+			value={{
+				setLoading,
+				db_user,
+				userRole,
+				isAdmin,
+				isInstructor,
+				isStudent,
+			}}
 		>
 			{children}
 		</RoleContext.Provider>

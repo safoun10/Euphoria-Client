@@ -29,7 +29,7 @@ const AddAClass = () => {
 			status,
 		};
 
-		fetch("http://localhost:5000/classes", {
+		fetch("https://euphoria-server.vercel.app/classes", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -38,10 +38,10 @@ const AddAClass = () => {
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				// 
+				//
 			});
 		toast("Class Added Successfully !!");
-        reset();
+		reset();
 	};
 
 	return (

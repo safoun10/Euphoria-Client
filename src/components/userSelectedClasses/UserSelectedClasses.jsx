@@ -8,7 +8,7 @@ const UserSelectedClasses = () => {
 	const arr = db_user?.selectedClasses;
 
 	useEffect(() => {
-		fetch("http://localhost:5000/all-classes")
+		fetch("https://euphoria-server.vercel.app/all-classes")
 			.then((res) => res.json())
 			.then((data) => {
 				setAll_class(data);
@@ -16,8 +16,7 @@ const UserSelectedClasses = () => {
 	}, [db_user]);
 
 	const filteredData = all_class?.filter((obj) => arr.includes(obj._id));
-    console.log(filteredData);
-
+	console.log(filteredData);
 
 	return (
 		<div>

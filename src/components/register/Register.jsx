@@ -53,7 +53,7 @@ const Register = () => {
 					};
 					updateUserProfile(name, url)
 						.then(() => {
-							fetch("http://localhost:5000/users", {
+							fetch("https://euphoria-server.vercel.app/users", {
 								method: "POST",
 								headers: {
 									"content-type": "application/json",
@@ -92,7 +92,7 @@ const Register = () => {
 					role: "user",
 				};
 
-				fetch("http://localhost:5000/users", {
+				fetch("https://euphoria-server.vercel.app/users", {
 					method: "POST",
 					headers: {
 						"content-type": "application/json",

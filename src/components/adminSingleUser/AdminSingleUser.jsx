@@ -3,7 +3,7 @@ import "./AdminSingleUser.css";
 import Swal from "sweetalert2";
 
 const AdminSingleUser = ({ single, setTest }) => {
-	const { _id , email, image, name, role } = single;
+	const { _id, email, image, name, role } = single;
 
 	const [disabled_admin, setDisabled_admin] = useState(false);
 	const [disabled_instructor, setDisabled_instructor] = useState(false);
@@ -33,7 +33,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 
 	const db_data = { id: _id, role: newRole };
 
-	fetch("http://localhost:5000/all-users/update-role", {
+	fetch("https://euphoria-server.vercel.app/all-users/update-role", {
 		method: "PATCH",
 		headers: {
 			"content-type": "application/json",
@@ -57,7 +57,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 			setDisabled_admin(false);
 			setDisabled_instructor(false);
 		}
-	}, [role , db_data.role]);
+	}, [role, db_data.role]);
 
 	return (
 		<div>

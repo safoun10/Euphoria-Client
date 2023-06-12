@@ -7,7 +7,7 @@ import SingleClass from "../../components/singleClass/singleClass";
 const Classes = () => {
 	const [classes, setClasses] = useState([]);
 
-	const baseURL = "http://localhost:5000/classes";
+	const baseURL = "https://euphoria-server.vercel.app/classes";
 
 	useEffect(() => {
 		axios.get(baseURL).then((response) => {
@@ -20,12 +20,17 @@ const Classes = () => {
 			<div className="bg-char">
 				<TopNav></TopNav>
 			</div>
-            <div className="display-1 my-5 text-center">
-                Explore our classes
-            </div>
-            <div className="mx-auto mb-5" style={{maxWidth : "1200px"}}>
-                {classes.map(classData => <SingleClass classData={classData} key={classData._id}></SingleClass>)}
-            </div>
+			<div className="display-1 my-5 text-center">
+				Explore our classes
+			</div>
+			<div className="mx-auto mb-5" style={{ maxWidth: "1200px" }}>
+				{classes.map((classData) => (
+					<SingleClass
+						classData={classData}
+						key={classData._id}
+					></SingleClass>
+				))}
+			</div>
 			<Footer></Footer>
 		</div>
 	);

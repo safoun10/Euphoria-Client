@@ -11,7 +11,7 @@ const useAdmin = () => {
 		enabled: !loading,
 		queryFn: async () => {
 			const res = await axios.get("/admins", {
-				baseURL: "http://localhost:5000",
+				baseURL: "https://euphoria-server.vercel.app",
 			});
 			const admins = res.data;
 			const matchingAdmin = admins.find(

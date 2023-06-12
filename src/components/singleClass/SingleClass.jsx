@@ -37,13 +37,16 @@ const SingleClass = ({ classData }) => {
 		const loggedIn = await user;
 
 		if (loggedIn && student) {
-			fetch("http://localhost:5000/all-users/add-selected-classes", {
-				method: "PATCH",
-				headers: {
-					"content-type": "application/json",
-				},
-				body: JSON.stringify(obj),
-			})
+			fetch(
+				"https://euphoria-server.vercel.app/all-users/add-selected-classes",
+				{
+					method: "PATCH",
+					headers: {
+						"content-type": "application/json",
+					},
+					body: JSON.stringify(obj),
+				}
+			)
 				.then((res) => res.json())
 				.then((data) => {
 					if (data) {
@@ -52,7 +55,9 @@ const SingleClass = ({ classData }) => {
 					}
 				});
 		} else {
-			toast.warning("You have to be a valid logged in student to select a class");
+			toast.warning(
+				"You have to be a valid logged in student to select a class"
+			);
 		}
 	};
 

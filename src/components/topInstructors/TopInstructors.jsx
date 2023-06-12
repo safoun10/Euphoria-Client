@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import SingleTopInstructor from '../singleTopInstructor/SingleTopInstructor';
+import React, { useEffect, useState } from "react";
+import SingleTopInstructor from "../singleTopInstructor/SingleTopInstructor";
 
 const TopInstructors = () => {
-    const [topInstructors , setTopInstructors] = useState([]);
+	const [topInstructors, setTopInstructors] = useState([]);
 
-    useEffect( () => {
-        fetch("http://localhost:5000/instructors")
-        .then(res => res.json())
-        .then(data => setTopInstructors(data))
-    } , []);
+	useEffect(() => {
+		fetch("https://euphoria-server.vercel.app/instructors")
+			.then((res) => res.json())
+			.then((data) => setTopInstructors(data));
+	}, []);
 
-    const slicedData = topInstructors.slice(0 , 6);
+	const slicedData = topInstructors.slice(0, 6);
 
-    return (
+	return (
 		<div className="py-5 bg-char-2 text-white">
 			<div className="display-2 text-center pb-3 px-3">
 				Our Top Instructors
 			</div>
-			<div className='px-5 mx-md-5 mx-0 text-center pb-2'>
+			<div className="px-5 mx-md-5 mx-0 text-center pb-2">
 				Embark on a Transformative Visual Odyssey by Empowering
 				Photography Journeys with Our Revered Summer School Maestro
 			</div>

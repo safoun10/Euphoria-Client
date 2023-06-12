@@ -41,7 +41,7 @@ const AdminSingleClass = ({ single, setTest }) => {
 
 	const db_data = { id: _id, status: newStatus };
 
-	fetch("http://localhost:5000/all-classes", {
+	fetch("https://euphoria-server.vercel.app/all-classes", {
 		method: "PATCH",
 		headers: {
 			"content-type": "application/json",
@@ -54,6 +54,42 @@ const AdminSingleClass = ({ single, setTest }) => {
 				// console.log(data);
 			}
 		});
+
+	// const onFeedback = () => {
+	// 	Swal.fire({
+	// 		title: "Submit your Github username",
+	// 		input: "text",
+	// 		inputAttributes: {
+	// 			autocapitalize: "off",
+	// 		},
+	// 		showCancelButton: true,
+	// 		confirmButtonText: "Send Feedback",
+	// 		showLoaderOnConfirm: true,
+	// 		preConfirm: (login) => {
+	// 			return login;
+	// 		},
+	// 	}).then((result) => {
+	// 		if (result.isConfirmed) {
+	// 			const test = result.value;
+	// 		}
+	// 	});
+	// }
+
+	// const feedback_data = {id: _id , feedback : ""};
+
+	// fetch("https://euphoria-server.vercel.app/all-classes/feedback", {
+	// 	method: "PATCH",
+	// 	headers: {
+	// 		"content-type": "application/json",
+	// 	},
+	// 	body: JSON.stringify(feedback_data),
+	// })
+	// 	.then((res) => res.json())
+	// 	.then((data) => {
+	// 		if (data.insertedID) {
+	// 			// console.log(data);
+	// 		}
+	// 	});
 
 	useEffect(() => {
 		if (status === "pending") {
@@ -74,7 +110,7 @@ const AdminSingleClass = ({ single, setTest }) => {
 				<div className="fs-4 fw-light">{name}</div>
 				<div>Instructor : {instructor_name}</div>
 				<div>{instructor_email}</div>
-				<div>Price :  {price}</div>
+				<div>Price : {price}</div>
 				<div>Available Seats : {seats}</div>
 			</div>
 			<div className="col-2">{status}</div>
@@ -93,7 +129,10 @@ const AdminSingleClass = ({ single, setTest }) => {
 				>
 					Deny
 				</button>
-				<button className="btn bg-dark text-white rounded-3 w-100 my-1">
+				<button
+					disabled={unSelectable ? true : false}
+					className="btn bg-dark text-white rounded-3 w-100 my-1"
+				>
 					Feedback
 				</button>
 			</div>

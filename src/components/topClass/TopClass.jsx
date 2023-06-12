@@ -5,7 +5,7 @@ import axios from "axios";
 const TopClass = () => {
 	const [top, setTop] = useState([]);
 
-	const baseURL = "http://localhost:5000/top-classes";
+	const baseURL = "https://euphoria-server.vercel.app/top-classes";
 
 	useEffect(() => {
 		axios.get(baseURL).then((response) => {
@@ -21,8 +21,7 @@ const TopClass = () => {
 	return (
 		<div className="mx-auto pb-5 w-100" style={{ maxWidth: "1200px" }}>
 			<div className="text-center display-1 pt-5 pb-1 text-cursive">
-				Visit our top Photography
-				classes
+				Visit our top Photography classes
 			</div>
 			<div className="text-center w-75 mx-auto pb-5">
 				Unlock your creative potential and capture stunning images with
