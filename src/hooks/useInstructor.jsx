@@ -17,12 +17,9 @@ const useInstructor = () => {
 			const matchingInstructor = instructors.find(
 				(instructor) => instructor.email === user?.email
 			);
-			console.log(instructors);
-			console.log(matchingInstructor);
 			return matchingInstructor;
 		},
 	});
-	console.log(isInstructor);
 	return [isInstructor, isInstructorLoading];
 };
 

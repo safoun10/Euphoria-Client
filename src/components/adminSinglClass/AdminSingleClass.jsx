@@ -47,7 +47,7 @@ const AdminSingleClass = ({ single, setTest }) => {
 		.then((res) => res.json())
 		.then((data) => {
 			if (data.insertedID) {
-				console.log(data);
+				// console.log(data);
 			}
 		});
 

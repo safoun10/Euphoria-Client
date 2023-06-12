@@ -17,12 +17,9 @@ const useAdmin = () => {
 			const matchingAdmin = admins.find(
 				(admin) => admin.email === user?.email
 			);
-			console.log(admins);
-			console.log(matchingAdmin);
 			return matchingAdmin;
 		},
 	});
-	console.log(isAdmin);
 	return [isAdmin, isAdminLoading];
 };
 

@@ -17,12 +17,9 @@ const useStudent = () => {
 			const matchingStudents = students.find(
 				(student) => student.email === user?.email
 			);
-			console.log(students);
-			console.log(matchingStudents);
 			return matchingStudents;
 		},
 	});
-	console.log(isStudent);
 	return [isStudent, isStudentLoading];
 };
 
