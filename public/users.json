@@ -1,5 +1,17 @@
 [
     {
+        "name": "Euphoria Admin",
+        "email": "euphoria-admin@gmail.com",
+        "image": "https://lh3.googleusercontent.com/a/AAcHTtdTku-TH3vWT3nbZNZYRnshvI7fQAeIkfogSsAb=s96-c",
+        "role": "admin"
+    },
+    {
+        "name": "MD Sultan Mahmud Safoun",
+        "email": "safoun.official@gmail.com",
+        "image": "https://lh3.googleusercontent.com/a/AAcHTtdTku-TH3vWT3nbZNZYRnshvI7fQAeIkfogSsAb=s96-c",
+        "role": "admin"
+    },
+    {
         "name": "Safoun X",
         "email": "sultanhkr991@gmail.com",
         "image": "https://lh3.googleusercontent.com/a/AAcHTtf-8qK20ycJ-ZHsk1x7RUNvX5jqtq45MFKeSdT7=s96-c",
@@ -24,80 +36,104 @@
         "role": "instructor"
     },
     {
-        "name": "Instructor4",
-        "email": "sultanhkr004@gmail.com",
+        "name": "Peter parker",
+        "email": "instructor-04@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "Instructor5",
-        "email": "sultanhkr005@gmail.com",
+        "name": "Jack Dawson",
+        "email": "instructor-05@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "Instructor6",
-        "email": "sultanhkr006@gmail.com",
+        "name": "Tamim vaia",
+        "email": "instructor-06@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "Instructor7",
-        "email": "sultanhkr007@gmail.com",
+        "name": "Atika",
+        "email": "instructor-07@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "Instructor8",
-        "email": "sultanhkr008@gmail.com",
+        "name": "Faiza",
+        "email": "instructor-08@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "Admin1",
-        "email": "safoun.official@gmail.com",
-        "image": "https://lh3.googleusercontent.com/a/AAcHTtdTku-TH3vWT3nbZNZYRnshvI7fQAeIkfogSsAb=s96-c",
-        "role": "admin"
-    },
-    {
-        "name": "new instructor",
-        "email": "sultanhkr025@gmail.com",
+        "name": "Marzan",
+        "email": "instructor-09@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "instructor"
     },
     {
-        "name": "MD Sultan ",
-        "email": "salt@gmail.com",
+        "name": "user-01",
+        "email": "user-01@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "user"
     },
     {
-        "name": "Safoun",
-        "email": "sultana@gmail.com",
+        "name": "user-02",
+        "email": "user-02@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "user"
     },
     {
-        "name": "MD Sultan Mahmud Safoun",
-        "email": "sultanhkr000@gmail.com",
+        "name": "user-03",
+        "email": "user-03@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "user"
     },
     {
-        "name": "MD Sultan Mahmud",
-        "email": "safoun1@gmail.com",
+        "name": "user-04",
+        "email": "user-04@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
-        "role": "instructor"
+        "role": "user"
     },
     {
-        "name": "MD Sultan Mahmud Safoun",
-        "email": "sultanhkr7251@gmail.com",
+        "name": "user-05",
+        "email": "user-05@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
-        "role": "admin"
+        "role": "user"
     },
     {
-        "name": "someone",
-        "email": "someone@somewhere.com",
+        "name": "user-05",
+        "email": "user-05@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "user"
+    },
+    {
+        "name": "user-06",
+        "email": "user-06@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "user"
+    },
+    {
+        "name": "user-07",
+        "email": "user-07@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "user"
+    },
+    {
+        "name": "user-08",
+        "email": "user-08@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "user"
+    },
+    {
+        "name": "user-09",
+        "email": "user-09@gmail.com",
+        "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
+        "role": "user"
+    },
+    {
+        "name": "user-10",
+        "email": "user-10@gmail.com",
         "image": "https://i.postimg.cc/7Pt14VtD/istockphoto-1471845315-612x612.jpg",
         "role": "user"
     }

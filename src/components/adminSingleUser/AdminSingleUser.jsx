@@ -33,7 +33,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 				<div className="col-4">
 					<div className="fs-4 fw-light">{name}</div>
 					<div>{email}</div>
-					<div>Status : {role}</div>
+					<div>Role : {role}</div>
 				</div>
 				<div className="col-4">
 					<button

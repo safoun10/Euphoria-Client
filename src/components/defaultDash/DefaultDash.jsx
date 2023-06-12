@@ -21,7 +21,7 @@ const DefaultDash = () => {
 						<Navigate to={"user-selected-classes"}></Navigate>
 					</div>
 				) : (
-					"Please wait a moment for data to load . Thank you for your patience ..."
+					"Please wait a moment for data to load . You can also try reloading the page . Thank you for your patience ..."
 				)}
 			</div>
 		</div>
