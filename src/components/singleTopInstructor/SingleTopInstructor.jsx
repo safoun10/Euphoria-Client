@@ -2,7 +2,6 @@ import React from "react";
 import { BsHeart } from "react-icons/bs";
 
 const SingleTopInstructor = ({ single }) => {
-	console.log(single);
 
 	const { email, image, name } = single;
 
