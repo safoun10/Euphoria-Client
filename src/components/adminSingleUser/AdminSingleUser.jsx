@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./AdminSingleUser.css"
 
 const AdminSingleUser = ({ single, setTest }) => {
 
@@ -10,6 +11,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 	useEffect(() => {
 		if(role && role === "admin"){
 			setDisabled_admin(true);
+			setDisabled_instructor(true);
 		} else if (role && role === "instructor"){
 			setDisabled_instructor(true);
 		} else{
@@ -27,7 +29,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 					<img
 						src={image}
 						alt="user image"
-						className="rounded-5 img-fluid"
+						className="rounded-5 img-user img-fluid"
 					/>
 				</div>
 				<div className="col-4">
