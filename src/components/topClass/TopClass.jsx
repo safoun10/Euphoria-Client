@@ -5,7 +5,7 @@ import axios from "axios";
 const TopClass = () => {
 	const [top, setTop] = useState([]);
 
-	const baseURL = "popular.json";
+	const baseURL = "http://localhost:5000/top-classes";
 
 	useEffect(() => {
 		axios.get(baseURL).then((response) => {
@@ -34,9 +34,9 @@ const TopClass = () => {
 			<div className="row w-100 mx-auto">
 				<div className="col-sm-6 col-11 mx-auto">
 					{first.map((single) => (
-						<div key={single.id} className="top-card">
+						<div key={single._id} className="top-card">
 							<img
-								src={single.photo}
+								src={single.image}
 								alt="photo"
 								className="img-fluid rounded-2"
 							/>
@@ -45,7 +45,7 @@ const TopClass = () => {
 									{single.name}
 								</div>
 								<div className="text-cursive display-6">
-									{single.student} students
+									{single.students} students
 								</div>
 							</div>
 						</div>
@@ -53,9 +53,9 @@ const TopClass = () => {
 				</div>
 				<div className="col-sm-6 col-11 mx-auto">
 					{last.map((single) => (
-						<div key={single.id} className="top-card">
+						<div key={single._id} className="top-card">
 							<img
-								src={single.photo}
+								src={single.image}
 								alt="photo"
 								className="img-fluid rounded-2"
 							/>
@@ -64,7 +64,7 @@ const TopClass = () => {
 									{single.name}
 								</div>
 								<div className="text-cursive display-6">
-									{single.student} students
+									{single.students} students
 								</div>
 							</div>
 						</div>
