@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
-import { RoleContext } from '../../providers/RoleProvider';
 import { TailSpin } from 'react-loader-spinner';
+import useStudent from '../../hooks/useStudent';
 
 const StudentRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
-	const { isStudent } = useContext(RoleContext);
+	const [isStudent, isStudentLoading] = useStudent();
 
 	const location = useLocation();
 
-	if (loading) {
+	if (loading || isStudentLoading) {
 		return (
 			<div
 				style={{
