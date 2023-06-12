@@ -4,8 +4,6 @@ import "./SingleInstructorClass.css";
 const SingleInstructorClass = ({ classData }) => {
 	const { name, image, status , students } = classData;
 
-	console.log(classData);
-
 	return (
 		<div>
 			<div className="p-3">

@@ -20,8 +20,6 @@ const AdminSingleUser = ({ single, setTest }) => {
 		}
 	} , []);
 
-	console.log(disabled_admin , disabled_instructor);
-
 	return (
 		<div>
 			<div className="row align-items-center justify-content-between border-class rounded-5">
