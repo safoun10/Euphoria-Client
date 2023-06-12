@@ -2,12 +2,11 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Navigate, useLocation, useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
-// import { RoleContext } from "../../providers/RoleProvider";
 import useAdmin from "../../hooks/useAdmin";
 
 const AdminRoute = ({ children }) => {
-	const { user , loading } = useContext(AuthContext);
-	 const [isAdmin, isAdminLoading] = useAdmin();
+	const { user, loading } = useContext(AuthContext);
+	const [isAdmin, isAdminLoading] = useAdmin();
 
 	const location = useLocation();
 

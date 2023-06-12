@@ -1,15 +1,16 @@
-import React, { useContext } from "react";
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { RoleContext } from "../../providers/RoleProvider";
+import useInstructor from "../../hooks/useInstructor";
+import { useContext } from "react";
+import { TailSpin } from "react-loader-spinner";
 
-const InstructorRoute = () => {
-	const { user , loading } = useContext(AuthContext);
-	const { isInstructor } = useContext(RoleContext);
+const InstructorRoute = ({ children }) => {
+	const { user, loading } = useContext(AuthContext);
+	const [isInstructor, isInstructorLoading] = useInstructor();
 
-    const location = useLocation();
+	const location = useLocation();
 
-	if (loading) {
+	if (loading || isInstructorLoading) {
 		return (
 			<div
 				style={{
@@ -32,8 +33,8 @@ const InstructorRoute = () => {
 	}
 	if (user && isInstructor) {
 		return children;
-    }
-    return <Navigate to="/" state={{ from: location }} replace></Navigate>;
+	}
+	return <Navigate to="/" state={{ from: location }} replace></Navigate>;
 };
 
 export default InstructorRoute;
