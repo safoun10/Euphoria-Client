@@ -11,6 +11,7 @@ export const RoleProvider = ({ children }) => {
 	const [isStudent, setIsStudent] = useState(false);
 	const [isInstructor, setIsInstructor] = useState(false);
 	const [isAdmin, setIsAdmin] = useState(false);
+	const [loading, setLoading] = useState(false);
 
 	useEffect(() => {
 		fetch("http://localhost:5000/all-users")
@@ -20,8 +21,9 @@ export const RoleProvider = ({ children }) => {
 					(single) => single?.email === user?.email
 				);
 				setUsers(exact_user);
+				setLoading(false)
 			});
-	}, [user]);
+	}, [user , loading]);
 
 	const db_user = user_from_db[0];
 	const userRole = user_from_db[0]?.role;
@@ -38,7 +40,7 @@ export const RoleProvider = ({ children }) => {
 
 	return (
 		<RoleContext.Provider
-			value={{ db_user, userRole, isAdmin, isInstructor, isStudent }}
+			value={{ setLoading , db_user, userRole, isAdmin, isInstructor, isStudent }}
 		>
 			{children}
 		</RoleContext.Provider>

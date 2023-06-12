@@ -15,9 +15,10 @@ const SingleClass = ({ classData }) => {
 		price,
 	} = classData;
 
-	const { db_user, isStudent } = useContext(RoleContext);
+	const { setLoading, db_user, isStudent } = useContext(RoleContext);
 	const { user } = useContext(AuthContext);
-
+	const [new_user_data, setNew_user_data] = useState([]);
+	const [disabled, setDisabled] = useState(false);
 	const [redBg, setRedBg] = useState(false);
 
 	useEffect(() => {
@@ -26,7 +27,7 @@ const SingleClass = ({ classData }) => {
 		} else {
 			setRedBg(false);
 		}
-	}, []);
+	}, [new_user_data, disabled]);
 
 	const userId = db_user?._id;
 	const obj = { class_id: _id, user_id: userId };
@@ -46,14 +47,27 @@ const SingleClass = ({ classData }) => {
 				.then((res) => res.json())
 				.then((data) => {
 					if (data) {
-						console.log(data);
 						toast("added !!");
+						setLoading(true);
 					}
 				});
 		} else {
 			toast("You have to be a valid logged in student to select a class");
 		}
 	};
+
+	useEffect(() => {
+		const data = db_user?.selectedClasses?.map((item) => item.class_id);
+		setNew_user_data(data);
+	}, [db_user]);
+
+	useEffect(() => {
+		if (new_user_data?.includes(_id)) {
+			setDisabled(true);
+		} else {
+			setDisabled(false);
+		}
+	}, [new_user_data, _id]);
 
 	return (
 		<div className="p-3">
@@ -88,14 +102,15 @@ const SingleClass = ({ classData }) => {
 						{price}
 					</div>
 					<div>
-						<div
+						<button
 							onClick={handleClick}
+							disabled={disabled ? true : false}
 							className={`btn btn-dark text-white rounded-0 px-5 py-1 mt-2 ${
 								redBg ? "disabled" : ""
 							}`}
 						>
 							Enroll
-						</div>
+						</button>
 					</div>
 				</div>
 			</div>
