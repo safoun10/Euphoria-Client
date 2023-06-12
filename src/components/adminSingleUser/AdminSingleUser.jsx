@@ -33,7 +33,7 @@ const AdminSingleUser = ({ single, setTest }) => {
 
 	const db_data = { id: _id, role: newRole };
 
-	fetch("http://localhost:5000/all-users", {
+	fetch("http://localhost:5000/all-users/update-role", {
 		method: "PATCH",
 		headers: {
 			"content-type": "application/json",

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import TopNav from '../../components/topNav/TopNav';
 import Footer from '../../components/footer/Footer';
-import DashboardData from '../../components/dashboardData/dashboardData';
+import DashboardData from '../../components/dashboardData/DashboardData';
 
 const Dashboard = () => {
     return (

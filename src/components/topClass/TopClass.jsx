@@ -16,6 +16,8 @@ const TopClass = () => {
 	const first = top.slice(0, 3);
 	const last = top.slice(3, 6);
 
+	// slicing was unnecessary here =_=
+
 	return (
 		<div className="mx-auto pb-5 w-100" style={{ maxWidth: "1200px" }}>
 			<div className="text-center display-1 pt-5 pb-1 text-cursive">

@@ -1,9 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./singleClass.css";
+import { RoleContext } from "../../providers/RoleProvider";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const SingleClass = ({ classData }) => {
-	const { name, image, instructor_name, instructor_email, seats, price } =
-		classData;
+	const {
+		_id,
+		name,
+		image,
+		instructor_name,
+		instructor_email,
+		seats,
+		price,
+	} = classData;
+
+	const { db_user, isStudent } = useContext(RoleContext);
+	const { user } = useContext(AuthContext);
 
 	const [redBg, setRedBg] = useState(false);
 
@@ -14,6 +27,33 @@ const SingleClass = ({ classData }) => {
 			setRedBg(false);
 		}
 	}, []);
+
+	const userId = db_user?._id;
+	const obj = { class_id: _id, user_id: userId };
+
+	const handleClick = async () => {
+		const student = await isStudent;
+		const loggedIn = await user;
+
+		if (loggedIn && student) {
+			fetch("http://localhost:5000/all-users/add-selected-classes", {
+				method: "PATCH",
+				headers: {
+					"content-type": "application/json",
+				},
+				body: JSON.stringify(obj),
+			})
+				.then((res) => res.json())
+				.then((data) => {
+					if (data) {
+						console.log(data);
+						toast("added !!");
+					}
+				});
+		} else {
+			toast("You have to be a valid logged in student to select a class");
+		}
+	};
 
 	return (
 		<div className="p-3">
@@ -49,7 +89,10 @@ const SingleClass = ({ classData }) => {
 					</div>
 					<div>
 						<div
-							className={`btn btn-dark text-white rounded-0 px-5 py-1 mt-2 ${redBg ? "disabled":""}`}
+							onClick={handleClick}
+							className={`btn btn-dark text-white rounded-0 px-5 py-1 mt-2 ${
+								redBg ? "disabled" : ""
+							}`}
 						>
 							Enroll
 						</div>
