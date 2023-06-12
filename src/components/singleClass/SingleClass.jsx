@@ -47,12 +47,12 @@ const SingleClass = ({ classData }) => {
 				.then((res) => res.json())
 				.then((data) => {
 					if (data) {
-						toast("added !!");
+						toast("class added !! check out the dashboard .");
 						setLoading(true);
 					}
 				});
 		} else {
-			toast("You have to be a valid logged in student to select a class");
+			toast.warning("You have to be a valid logged in student to select a class");
 		}
 	};
 
