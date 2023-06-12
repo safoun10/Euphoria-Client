@@ -17,15 +17,21 @@ const InstructorClasses = () => {
         })
     } ,[]);
 
+	const all_students = all_class.map(single => single.students);
+	const sum = all_students.reduce((total, num) => total + Number(num), 0);
+
     return (
 		<div>
-			<div className='p-5'>
-				{all_class.map((classData) => (
-					<SingleInstructorClass
-						classData={classData}
-						key={classData._id}
-					></SingleInstructorClass>
-				))}
+			<div className="p-5">
+				<div className='fs-4 pb-3 ps-3'>Total enrolled students : {sum}</div>
+				<div>
+					{all_class.map((classData) => (
+						<SingleInstructorClass
+							classData={classData}
+							key={classData._id}
+						></SingleInstructorClass>
+					))}
+				</div>
 			</div>
 		</div>
 	);

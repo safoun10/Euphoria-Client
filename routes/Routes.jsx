@@ -12,7 +12,6 @@ import UserSelectedClasses from "../src/components/userSelectedClasses/UserSelec
 import UserEnrolledClasses from "../src/components/userEnrolledClasses/userEnrolledClasses";
 import AddAClass from "../src/components/addAClass/AddAClass";
 import InstructorClasses from "../src/components/instructorClasses/InstructorClasses";
-import InstructorFeedback from "../src/components/instructorFeedback/InstructorFeedback";
 import AdminManageClasses from "../src/components/adminManageClasses/AdminManageClasses";
 import AdminManageUsers from "../src/components/adminManageUsers/AdminManageUsers";
 import DefaultDash from "../src/components/defaultDash/DefaultDash";
@@ -92,14 +91,6 @@ const router = createBrowserRouter([
 				element: (
 					<InstructorRoute>
 						<InstructorClasses></InstructorClasses>
-					</InstructorRoute>
-				),
-			},
-			{
-				path: "instructor-feedbacks",
-				element: (
-					<InstructorRoute>
-						<InstructorFeedback></InstructorFeedback>
 					</InstructorRoute>
 				),
 			},

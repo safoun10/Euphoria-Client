@@ -59,15 +59,6 @@ const DashboardData = () => {
 									My Classes
 								</div>
 							</Link>
-
-							<Link
-								to="/dashboard/instructor-feedbacks"
-								className="text-decoration-none text-dark"
-							>
-								<div className="btn bg-white rounded-0 w-100 py-2">
-									Feedback from Admin
-								</div>
-							</Link>
 						</div>
 					) : isStudent ? (
 						<div>
