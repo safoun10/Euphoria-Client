@@ -40,6 +40,8 @@ const Login = () => {
 					name: loggedUser.displayName,
 					email: loggedUser.email,
 					image: loggedUser.photoURL,
+					selectedClasses: [],
+					enrolledClasses: [],
 					role: "user",
 				};
 				fetch("http://localhost:5000/users", {

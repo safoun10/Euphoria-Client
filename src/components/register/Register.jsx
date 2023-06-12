@@ -47,6 +47,8 @@ const Register = () => {
 						name: name,
 						email: email,
 						image: url,
+						selectedClasses: [],
+						enrolledClasses: [],
 						role: "user",
 					};
 					updateUserProfile(name, url)
@@ -112,11 +114,11 @@ const Register = () => {
 			});
 	};
 
-	const [show , setShow] = useState(false);
+	const [show, setShow] = useState(false);
 
 	const onShow = () => {
 		setShow(!show);
-	}
+	};
 
 	return (
 		<div>
@@ -168,14 +170,20 @@ const Register = () => {
 										<div className="d-flex align-items-center">
 											<input
 												className="w-100 px-3 py-2"
-												type={show ? "text" : "password"}
+												type={
+													show ? "text" : "password"
+												}
 												name="password"
 												id="password"
 												placeholder="Please enter your password here"
 												required
 												{...register("password")}
 											/>
-											<div title="show password" onClick={onShow} className="btn bg-dark text-white rounded-0 py-2">
+											<div
+												title="show password"
+												onClick={onShow}
+												className="btn bg-dark text-white rounded-0 py-2"
+											>
 												<BsEye></BsEye>
 											</div>
 										</div>
