@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-    return (
+	return (
 		<div>
 			<div className="bg-dark py-3 w-100">
 				<div className="display-3 text-center text-white pb-2">
@@ -18,7 +18,7 @@ const Footer = () => {
 				<div className="col-lg-6 col-12 p-5 bg-char">
 					<div className="ms-auto" style={{ maxWidth: "600px" }}>
 						<div className="row justify-content-around">
-							<div className='col-12 col-sm-6'>
+							<div className="col-12 col-sm-6">
 								<div className="display-6 pb-4">Navigation</div>
 								<div>
 									<div>
@@ -55,7 +55,7 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div className='col-12 col-sm-6'>
+							<div className="col-12 col-sm-6">
 								<div className="display-6 pb-4">
 									Social Links
 								</div>
@@ -104,7 +104,7 @@ const Footer = () => {
 				<div className="col-lg-6 col-12 p-5 bg-char-2">
 					<div className="me-auto " style={{ maxWidth: "600px" }}>
 						<div className="row justify-content-around">
-							<div className='col-12 col-sm-6'>
+							<div className="col-12 col-sm-6">
 								<div className="display-6 pb-4">
 									Contact Info
 								</div>
@@ -126,7 +126,7 @@ const Footer = () => {
 									</div>
 								</div>
 							</div>
-							<div className='col-12 col-sm-6'>
+							<div className="col-12 col-sm-6">
 								<div className="display-6 pb-4">Address</div>
 								<div>
 									<div>
@@ -135,11 +135,9 @@ const Footer = () => {
 										</Link>
 									</div>
 									<div>
-										<Link
-											className="text-decoration-none text-white"
-										>
-                                            South Pole , Mars,
-                                        </Link>
+										<Link className="text-decoration-none text-white">
+											South Pole , Mars,
+										</Link>
 									</div>
 									<div>
 										<Link className="text-decoration-none text-white">
@@ -152,9 +150,12 @@ const Footer = () => {
 					</div>
 				</div>
 			</div>
-            <div className='bg-dark py-2'>
-                <div className='text-center text-white'> Copyright &copy; Euphoria | All rights reserved</div>
-            </div>
+			<div className="bg-dark py-2">
+				<div className="text-center text-white">
+					{" "}
+					Copyright &copy; Euphoria | All rights reserved
+				</div>
+			</div>
 		</div>
 	);
 };
